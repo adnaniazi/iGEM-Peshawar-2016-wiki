@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" type="image/png" href="http://2016.igem.org/wiki/images/f/f5/T-Peshawar--favicon-v1-compressor.png">
+    <title>Wiki Design 101 - iGEM Peshawar 2016</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+    <div class="outermost-box">
+        <div id="menu-button" class="floating-button-wrapper">
+    <div id="menu-background" class="js-toggle-left-slidebar">
+    </div>
+</div>
+<!--End of floating menu button wrapper -->        <div off-canvas="slidebar-1 left reveal">
+    <nav>
+        <ul class="navigation-list">
+            <li><a href="http://2016.igem.org/Team:Peshawar">Home</a></li>
+            <hr>
+            <li><a href="http://2016.igem.org/Team:Peshawar/Description">Project</a></li>
+            <li><a href="http://2016.igem.org/Team:Peshawar/Model">Modeling</a></li>
+            <li><a href="http://2016.igem.org/Team:Peshawar/Notebook">Notebook</a></li>
+            <li><a href="http://2016.igem.org/Team:Peshawar/Safety">Safety</a></li>
+            <li><a href="http://2016.igem.org/Team:Peshawar/Parts">Parts</a></li>
+            <li><a href="http://2016.igem.org/Team:Peshawar/Basic_Part">Basic Part</a></li>
+            <li><a href="http://2016.igem.org/Team:Peshawar/Composite_Part">Composite Part</a></li>
+            <hr>
+            <li><a href="http://2016.igem.org/Team:Peshawar/Team">Team</a></li>
+            <li><a href="http://2016.igem.org/Team:Peshawar/Attributions">Attributions</a></li>
+            <li><a href="http://2016.igem.org/Team:Peshawar/Collaborations">Collaborations</a></li>
+            <hr>
+            <li><a href="http://2016.igem.org/Team:Peshawar/Human_Practices">Human Practices</a></li>
+            <li>
+                <a href="http://2016.igem.org/Team:Peshawar/HP/Silver">Silver</a>
+                <span>   |   </span>
+                <a href="http://2016.igem.org/Team:Peshawar/HP/Gold">Gold</a>
+            </li>
+            <li><a href="http://2016.igem.org/Team:Peshawar/Integrated_Practices">Integrated Practices</a></li>
+            <hr>
+            <li><a href="http://2016.igem.org/Team:Peshawar/Engagement">Public Engagement</a></li>
+            <li><a href="http://2016.igem.org/Team:Peshawar/Awards">Awards</a></li>
+            <hr>
+            <li><a href="http://2016.igem.org/Team:Peshawar/Wiki">How to design an iGEM Wiki</a></li>
+
+        </ul>
+    </nav>
+    <article id="social-main-footer">
+    <!--FACEBOOK-->
+    <a href="https://www.facebook.com/iGEMPeshawar2016/" target="_blank">
+        <svg class="social-main-footer-svg facebook" width="61" height="60" viewBox="0 0 61 60" xmlns="http://www.w3.org/2000/svg">
+            <title>
+                T--Peshawar--facebook-round-v2
+            </title>
+            <g id="Page-1" fill="none" fill-rule="evenodd">
+                <g id="T--Peshawar--facebook-round-v2" fill="#808184">
+                    <path d="M30.594 1.465c-15.735 0-28.536 12.8-28.536 28.537 0 15.734 12.8 28.536 28.536 28.536S59.13 45.736 59.13 30.002c0-15.736-12.8-28.537-28.536-28.537m0 58.536c-16.542 0-30-13.455-30-29.997 0-16.543 13.458-30 30-30s30 13.457 30 30c0 16.542-13.458 30-30 30" id="facebook-circle" />
+                    <path d="M22.91 25.905h3.72V22.29c0-1.597.042-4.057 1.2-5.58 1.22-1.614 2.895-2.71 5.777-2.71 4.696 0 6.672.67 6.672.67l-.933 5.514s-1.55-.45-2.997-.45c-1.447 0-2.743.52-2.743 1.966v4.205h5.936l-.414 5.386h-5.524V50H26.63V31.29h-3.72v-5.385z" id="facebook" />
+                </g>
+            </g>
+        </svg>
+    </a>
+    <!--TWITTER-->
+    <a href="https://twitter.com/igem_peshawar" target="_blank">
+        <svg class="social-main-footer-svg twitter" width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <title>
+                T--Peshawar--twitter-round-v2
+            </title>
+            <g id="Page-1" fill="none" fill-rule="evenodd">
+                <g id="T--Peshawar--twitter-round-v2" fill="#808184">
+                    <path d="M30 1.463C14.266 1.463 1.464 14.265 1.464 30S14.264 58.537 30 58.537 58.538 45.735 58.538 30 45.738 1.463 30 1.463M30 60C13.46 60 0 46.542 0 30S13.46 0 30 0c16.542 0 30 13.458 30 30S46.542 60 30 60" id="twitter-circle" />
+                    <path d="M49.642 21.783c-1.325.587-2.75.984-4.242 1.163 1.527-.914 2.698-2.36 3.247-4.085-1.428.848-3.006 1.46-4.692 1.79-1.343-1.433-3.265-2.33-5.39-2.33-4.077 0-7.384 3.308-7.384 7.385 0 .58.065 1.142.19 1.683-6.134-.31-11.576-3.247-15.222-7.718-.636 1.093-.998 2.362-.998 3.715 0 2.56 1.303 4.82 3.283 6.148-1.208-.038-2.35-.373-3.347-.923v.09c0 3.58 2.547 6.566 5.927 7.242-.62.174-1.27.26-1.946.26-.476 0-.94-.044-1.39-.13.94 2.933 3.666 5.07 6.9 5.126-2.53 1.982-5.715 3.163-9.173 3.163-.596 0-1.185-.032-1.762-.1 3.27 2.093 7.15 3.316 11.32 3.316 13.59 0 21.015-11.25 21.015-21.013 0-.32-.006-.64-.02-.955 1.444-1.043 2.7-2.344 3.685-3.824" id="twitter" />
+                </g>
+            </g>
+        </svg>
+    </a>
+    <!--INSTAGRAM-->
+    <a href="https://www.instagram.com/igempeshawar/" target="_blank">
+        <svg class="social-main-footer-svg instagram" width="61" height="61" viewBox="0 0 61 61" xmlns="http://www.w3.org/2000/svg">
+            <title>
+                T--Peshawar--instagram-round-v2
+            </title>
+            <g id="Page-1" fill="none" fill-rule="evenodd">
+                <g id="T--Peshawar--instagram-round-v2" fill="#808184">
+                    <path d="M30.802 1.64c-15.736 0-28.537 12.802-28.537 28.537s12.8 28.537 28.537 28.537c15.735 0 28.536-12.802 28.536-28.537S46.538 1.64 30.802 1.64m0 58.537c-16.542 0-30-13.458-30-30s13.458-30 30-30 30 13.458 30 30-13.458 30-30 30" id="instagram-circle" />
+                    <path d="M45.3 42.212c0 1.902-1.548 3.446-3.45 3.446H19.763c-1.903 0-3.45-1.544-3.45-3.446v-14.73h5.375c-.464 1.144-.727 2.39-.727 3.695 0 5.426 4.417 9.837 9.845 9.837 5.428 0 9.843-4.41 9.843-9.837 0-1.306-.264-2.55-.725-3.694H45.3v14.73zm-19.63-14.73c1.15-1.593 3.022-2.64 5.137-2.64 2.115 0 3.985 1.047 5.136 2.64.75 1.042 1.203 2.314 1.203 3.695 0 3.492-2.845 6.33-6.34 6.33-3.494 0-6.336-2.838-6.336-6.33 0-1.38.45-2.653 1.2-3.694zm18.174-10.145l.795-.004v6.097l-6.083.022-.022-6.098 5.308-.017zM41.85 13.19H19.763c-3.835 0-6.957 3.118-6.957 6.952v22.07c0 3.834 3.122 6.952 6.957 6.952H41.85c3.834 0 6.957-3.118 6.957-6.952v-22.07c0-3.834-3.123-6.952-6.958-6.952z" id="instagram" />
+                </g>
+            </g>
+        </svg>
+    </a>
+    <!--BLOG-->
+    <a href="http://www.synbiokp.com/blog/" target="_blank">
+        <svg class="social-main-footer-svg blog" width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <title>
+                T--Peshawar--blog-round-v2
+            </title>
+            <g id="Page-1" fill="none" fill-rule="evenodd">
+                <g id="T--Peshawar--blog-round-v2" fill="#808184">
+                    <path d="M30 1.463C14.265 1.463 1.463 14.263 1.463 30c0 15.735 12.802 28.536 28.537 28.536S58.537 45.736 58.537 30 45.735 1.463 30 1.463M0 30C0 13.458 13.458 0 30 0s30 13.458 30 30-13.458 30-30 30S0 46.542 0 30z" id="blog-circle" />
+                    <path d="M34.95 19.916c7.654 0 14 6.357 14 14.025 0 7.64-6.375 14.03-14 14.03h-7.942C19.393 47.968 13 41.57 13 33.94V15.22c0-1.78 1.47-3.255 3.25-3.255 1.768 0 3.247 1.482 3.247 3.256 0 6.24.01 12.48.01 18.72 0 4.11 3.4 7.52 7.5 7.52h7.943c4.084 0 7.504-3.424 7.504-7.514 0-4.108-3.403-7.516-7.504-7.516h-8.568c-1.777 0-3.248-1.475-3.248-3.255 0-1.773 1.477-3.254 3.248-3.254h8.568z" id="blog" />
+                </g>
+            </g>
+        </svg>
+    </a>
+</article>
+</div>
+<!--End of off-canvas menu-->        <div canvas="container">
+            <section class="inner-container">
+                <div id="header-oc" class="header-outer-container">
+    <div class="sticky-header">
+        <div class="logo-wrapper">
+            <a href="http://2016.igem.org/Team:Peshawar">
+                <img id="id-logo" class="logo" src="http://2016.igem.org/wiki/images/7/7b/T--Peshawar--iGEM-Peshawar-Logo---New-Pakol-v2-2.png">
+            </a>                            
+        </div>
+    </div>
+</div>
+<!--End of full width header containing responsive logo  -->                <script type="text/javascript">
+
+    var button = document.getElementById('menu-button');
+    button.style.position = "fixed";
+    button.style.zIndex = "-1";
+    var buttonImage = document.getElementById("menu-background");
+
+    //Wait for the Logo to load and fill he div
+    document.getElementById('id-logo').onload = function() {
+        var header = document.getElementById('header-oc');
+        headerHeight = header.scrollHeight;
+        screenWidth = header.scrollWidth;
+        console.log('headerHeight',headerHeight, 'headerwidth', screenWidth);
+
+        //Scale the button according to header height
+        var buttonheight = headerHeight / 3.5;
+        buttonImage.style.backgroundSize = buttonheight + 'px';
+        buttonImage.style.height = buttonheight +'px';
+        buttonImage.style.width = buttonheight*1.25 +'px';
+        button.style.zIndex = "2";
+
+        // Calculate button coordinates
+        menuButtonHeight = 80;                        
+        var buttonTopPosition = headerHeight / 2 - buttonheight / 2;
+        var buttonLeftPosition = screenWidth / 36 ;
+
+        // Poistion the button at optimal location
+        button.style.left = buttonLeftPosition + 'px';
+        button.style.top = buttonTopPosition + 'px';
+    };
+
+    // Hack for menu button not appear when the back button is pressed in history
+    window.onpageshow = function(event) {
+        var button = document.getElementById('menu-button');
+        button.style.position = "fixed";
+        button.style.zIndex = "-1";
+        var buttonImage = document.getElementById("menu-background");
+        
+        var header = document.getElementById('header-oc');
+        headerHeight = header.scrollHeight;
+        screenWidth = header.scrollWidth;
+        console.log('headerHeight',headerHeight, 'headerwidth', screenWidth);
+
+        //Scale the button according to header height
+        var buttonheight = headerHeight / 3.5;
+        buttonImage.style.backgroundSize = buttonheight + 'px';
+        buttonImage.style.height = buttonheight +'px';
+        buttonImage.style.width = buttonheight*1.25 +'px';
+        button.style.zIndex = "2";
+
+        // Calculate button coordinates
+        menuButtonHeight = 80;                        
+        var buttonTopPosition = headerHeight / 2 - buttonheight / 2;
+        var buttonLeftPosition = screenWidth / 36 ;
+
+        // Poistion the button at optimal location
+        button.style.left = buttonLeftPosition + 'px';
+        button.style.top = buttonTopPosition + 'px';
+    };
+
+</script>
+                <div class="full-content-wrapper-container">
+                    <div class="full-width-content-wrapper wiki-full">
+                        <div id="js-parallax-window" class="parallax-window">
+                          <div class="parallax-static-content">
+                            <h1>iGEM Wiki Design 101</h1>
+                            <div class="video-overlay" style="background-image: url(&quot;https://d3k5xyayaartr5.cloudfront.net/_assets/pattern-overlays/patterns/black-criss-cross.png&quot;);"></div>
+                          </div>
+                          <div id="js-parallax-background" class="parallax-background"></div>
+                        </div>
+                    </div>
+                    <!--End of full-width-content-wrapper-->
+                </div>
+                <!--End of full-width-content-wrapper-container-->
+
+
+
+
+
+
+                <div class="centered-content-wrapper-container">
+                    <div class="centered-content-wrapper wiki">
+                        <br>
+                        <p>Although iGEM provides a basic skeleton for the wiki &mdash; that can be easily filled by anyone who has some basic knowledge of HTML and CSS &mdash; most teams prefer to completely redesign the look and feel of their wiki. For first timers, completely redesigning the wiki could be an overwhelmingly difficult experience, partly due to the scant information available on how to do it exactly.</p>
+                        <p>Here, we present some of the lessons we learned while completely redesigning our iGEM wiki for the first time in the hope that some teams in the coming years will find it useful.</p> 
+                        <hr>
+                        <h2>1. Design your wiki to be responsive</h2> 
+                        <p>A responsive wiki adjusts its content to different screen-sizes by tweaking its layout so that the main content is always visible clearly without the user needing to zoom-in or scroll horizontally.</p> 
+                        <p>It is important to make the wiki responsive because your wiki visitors may be using a mobile phone, or a tablet, or a laptop &mdash; all with different screen sizes and resolutions. A wiki designed only for the laptops will be difficult to browse on a smartphone because the elements of the webpage would then be squished to fit the phone. The user will then need to zoom-in to view the text, and consequently scroll horizontally every now and then to view the entire page &mdash; not exactly a pleasant experience. </p>
+                        <figure>
+                            <img src="http://2016.igem.org/wiki/images/0/05/T--Peshawar--responsive-web-design.gif">
+                            <figcaption>A responsive website adjusts its layout according to the size of the device it is being viewed on. In the above illustration of our responsive wiki, the picture and bio get re-arranged depending on the size of the window.</figcaption>
+                        </figure> 
+                        <p>In a responsive web design, the website tweaks its layout for different screen sizes for best user experience. The screen resolution at which the website tweaks its layout is called a breakpoint. The default iGEM wiki template for the year 2016 uses a breakpoint of 1000px. For screen widths above 1000px, the iGEM wiki lays out the menu vertically as a sidebar. And for screen widths below 1000px, the menu is stacked vertically and the page content is appended below it. This is done so that the page's main text can be displayed conveniently on smaller-sized screens. Furthermore, the mobile menu has links that have wider padding so that the user can easily touch them with their fingers and go to the desired page. </p> 
+                        <p>Your custom&ndash;designed wiki can have as many breakpoint as you like, but we think that a single breakpoint, around 1000px, is enough. Managing too many breakpoints may become a bit difficult for first timers. </p>
+                        <hr>
+                        <h2>2. Use a grid framework</h2>
+                        <p>Grid frameworks make it easy to design a responsive website. There are three major grid frameworks you could choose from:</p>
+                        <ul>
+                            <li>1. <a href="http://getbootstrap.com/">Bootstrap</a></li>
+                            <li>2. <a href="http://foundation.zurb.com/">Foundation by Zurb</a></li>
+                            <li>3. <a href="http://neat.bourbon.io/">Neat by thoughtbot</a></li>
+                        </ul>
+                        <p>If you use Bootstrap or Foundation, you will litter your HTML markup with presentation classes from these frameworks, which is not a good practice; the content should always be separate from its presentation. </p>
+<pre class="language-html">
+<code class="language-html">
+&lt;!-- Columns are always 50% wide, on mobile and desktop -->
+&lt;!-- Example of Bootstrap -->
+&lt;div class="row">
+  &lt;div class="col-xs-6">Column 1 text&lt;/div>
+  &lt;div class="col-xs-6">Column 2 text&lt;/div>
+&lt;/div>
+</code>
+</pre>
+<figcaption>
+    This is how you would use Bootstrap if you wanted to have two columns of text on both smartphones and desktop each 50% wide. col-xs-6 is a presentation class from Bootstrap framework, and it is controlling how the content of the div would appear on the page. But CSS should control how the content would look. Using Bootstrap and Foundation you will litter you HTML markup with these presentation classes. The boundry between content and its presentation get all mixed up when using Bootstrap and Foundation.
+</figcaption>
+
+
+<pre class="language-html">
+<code class="language-html">
+&lt;!-- Columns are always 50% wide, on mobile and desktop -->
+&lt;!-- Example of Neat -->
+&lt;div class="container">
+  &lt;div>Column 1 text&lt;/div>
+  &lt;div>Column 2 text&lt;/div>
+&lt;/div>
+</code>
+</pre>
+<figcaption>
+    Clean markup when using Neat. HTML will now contains only the page's content. It's styling and responsive layout is being controlled using CSS. No there is a clear divide between content and its presentation.
+</figcaption>
+
+
+
+                        <p>Neat avoids this littering by providing a semantic grid framework that respects the boundary between content and presentation. You won't need to use any presentation classes in your HTML markup if you use the Neat grid framework. You will end up having a clean HTML markup.</p>
+                        <p>Furthermore, Bootstrap and Foundation are bloated. A wiki using them will be slower than the one using Neat, which is a minimalistic and light weight framework &mdash; all the more reasons to start using Neat in your next wiki or web design project.</p>
+                        <hr>
+                        <h2>3. Develop your wiki locally</h2>
+                        <p>iGEM provides a very basic editor to edit your Team's wiki pages, but using it is a real pain. The editor has no syntax highlighting, does not support code indentation or code completion; in short, all the perks of a modern integrated development environment (IDE) are missing from it. Don't waste your time and energy developing your wiki online using the iGEM wiki editor. </p>
+
+                        <p>Instead make your wiki locally first just like a normal website, and then copy and paste the HTML and CSS code on your team's iGEM pages. </p>
+
+                        <figure>
+                            <img src="http://2016.igem.org/wiki/images/b/b7/T--Peshawar--offline-wiki.png">
+                            <figcaption>Developing wiki online on iGEM servers is a pain. We developed our wiki locally using Sublime and CodeKit. We then dumped all the HTML, CSS, and JavaScript files at the very last hour on to the iGEM server.</figcaption>
+                        </figure>
+
+                        <p>But you must take care of a few things if you want to follow this approach:</p>
+                        <h3>Use online assets in your offline website</h3>
+                        <p>Usually, when web developers develop websites locally &mdash; i.e., offline &mdash; they use all assets locally. For example, they place all fonts in a <i>fonts</i> folder, and images in an <i>img</i> folder, and then use relative paths in the code to access these assets in their CSS or HTML code.</p>
+                        <p>When designing an iGEM wiki, you must not use local resources. Instead, you should first upload them to iGEM servers, and then use the absolute path of these assets in your CSS or HTML. This will make your life so much easier. 
+
+<pre>
+<code class="language-css">
+img:hover {
+    content: url(http://2016.igem.org/wiki/images/3/3d/T--Peshawar--bourbon.png);
+}   
+</code>
+</pre>
+<figcaption>Example of use of absolute path of assets. Always used absolute paths of your assets when developing your iGEM wiki offline.</figcaption>
+
+
+<pre>
+<code class="language-css">
+img:hover {
+    content: url('./img/footer/T--Peshawar--bourbon.png');
+}   
+</code>
+</pre>
+<figcaption>Example of use of relative path of assets. Don't use relative paths of your assets when developing your iGEM wiki offline.</figcaption>
+
+                        After you are done developing the wiki, all you need to do to make your "offline" wiki "online" is to just copy and paste your HTML, CSS, and JavaScript code on your iGEM Team pages. Off course, you would have to do a few minors tweaks to link your CSS and JavaScript files, but no major changes would be needed.</p>
+
+                        <h3>Use Allow CORS and Cache Killer Chrome extensions during development</h3>
+                        <p>When you are working on a local website which is using online assets, the assets will fail to load in your web-browser. You will need to enable Cross-origin resource sharing (CORS) using <a href="https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi">Allow CORS Chrome extension</a>.</p>
+                        <p>Furthermore, you would also need to empty your cache every time you reload a page because you made some changes in it. Use the <a href="https://chrome.google.com/webstore/detail/cache-killer/jpfbieopdmepaolggioebjmedmclkbap">Cache Killer Chrome extension</a> to purge the cache every time you refresh your webpage.</p>
+                        <h3>Use Live Reload to automatically refresh the webpage you are currently developing</h3>
+                        <p>Every time you make changes in HTML, CSS, or JavaScript files, you will need to save these changes and then refresh your webpage to view the changes take effect. This may become very time consuming considering that you would repeat this process more than a thousand times a day. </p>
+                        <p>Either use <a href="https://incident57.com/codekit/">Codekit's</a> Preview feature or use <a href="http://livereload.com/">Live Reload</a> software to refresh the webpage automatically whenever you make any changes in your HTML, CSS, or JavaScript files. Live Reload can work on both Windows and Mac whereas, Codekit is a Mac-only software.</p>
+                        <hr>
+                        <h2>4. Reuse code snippets using .kit language </h2>
+                        <p>While developing your website locally, use <a href="https://incident57.com/codekit/kit.php">.kit language</a> to reuse your code snippet across many different pages. For instance, you will use header, footer, and menu on almost all pages. You can opt to write code for all these elements in each and every page, but it's cumbersome &mdash; not to mention difficult to maintain in future. Instead, you should make separate HTML files for these reusable elements of the website, and then use the .kit language to import them in your pages as needed &mdash; super convenient if you ask me. </p>
+                        <p>To use the .kit language you will need to use Codekit. Codekit will compile the files for you so that the separate snippets are included inline in the final HTML output.</p>
+
+<pre class="language-markup">
+<code class="language-markup">   
+&lt;!DOCTYPE html>
+&lt;html>
+
+&lt;head>
+    &lt;title>iGEM Peshawar 2016</title>
+    &lt;link rel="stylesheet" type="text/css" href="css/main.css">
+&lt;/head>
+
+&lt;body>
+    &lt;div class="outermost-box">
+        &lt;!--@import "_floating_button_wrapper.kit"-->
+        &lt;!--@import "_off_canvas_slidebar_nav.kit"-->
+        &lt;div canvas="container">
+            &lt;section class="inner-container">
+                &lt;!--@import "_header.kit"-->
+                &lt;!--@import "_inlineJS_menu_button.kit"-->
+
+                &lt;div class="full-content-wrapper-container">
+                    &lt;div class="full-width-content-wrapper">
+                    &lt;/div>
+                    &lt;!--End of full-width-content-wrapper-->
+                &lt;/div>
+                &lt;!--End of full-width-content-wrapper-container-->
+                
+                &lt;!--@import "_all_in_one_footer.kit"-->
+            &lt;/section>
+            &lt;!--End of inner-container-->
+        &lt;/div>
+        &lt;!--End of on-canvas container for all the content-->
+    &lt;/div>
+    &lt;!--End of outermost box-->
+    &lt;script src="js/script-min.js" type="text/javascript">&lt;/script>
+    &lt;!--@import "_statcounter.kit"-->
+&lt;/body>
+
+&lt;/html>
+</code>
+</pre>
+<figcaption>An example of how to reuse code snippets by writing them in separate files and then importing them using .kit language's @import statement. For example, _header.kit file contains HTML code for the header section of our wiki pages and we are importing the contents of this file in the code above. Similarly, _all_in_one_footer.kit file contains HTML code for the footer of the website. Any text file can be imported inline using kit langauge's @import command. 
+</figcaption>
+
+
+
+                        <hr>
+                        <h2>5. Compress your resources</h2>
+                        <p>The load time of a webpage can make or break the user experience of a website. Images play a key role in loading speed of a page. Large high resolution pictures will take an unnecessarily long time to load. Your wiki visitors are an impatient lot. You would be lucky if your average visitor spends more than 10 seconds on any page of the wiki. You are fighting for every millisecond here. Therefore, you must compress all your images before uploading them on the iGEM server. We found that <a href="https://compressor.io">Compressor.io</a> provides the highest lossless compression. Its only downside is that it compresses only one image at a time. If you have multiple images to compress, you may want to use <a href="http://compresspng.com/">Compress PNG.</a></p>
+                        <figure>
+                            <img src="http://2016.igem.org/wiki/images/e/e9/T--Peshawar--compressorio.gif">
+                            <figcaption>Compress your images so that the webpage loads faster. The animation above shows a comparison of the compressed and uncompressed image. The compressed image is 64% smaller in size than the uncompressed version. Both look the same however.</figcaption>
+                        </figure>
+                        <p>You should also minify your CSS and JavaScript. Minifying removes white spaces from these files making them smaller in size. The smaller the size, the faster the webpage will load.</p>
+                        <p>Moreover, combine all your CSS files into single CSS file, and all your JavaScript files (except MathJax.js) into a single JavaScript file. Once you've done that, include the consolidated CSS and JavaScript files in your Wiki pages. Single CSS and JavaScript files will require single http requests; the smaller the number of http requests, the faster the website is going to load.</p>
+                        <figure>
+                            <img src="http://2016.igem.org/wiki/images/a/a0/T--Peshawar--codekit-css-compilation.gif">
+                            <figcaption>
+                            We have combined all our individual CSS files (shown on the right) into a single minified CSS file (main.css) using CodeKit. This reduces the number of http requests a webpage has to make to fetch the styling, thereby reducing the page load times.    
+                            </figcaption>
+                        </figure>
+                        <hr>
+                        <h2>6.  Use readymade code snippets from CodePen</h2>
+                        <figure>
+                            <img src="http://2016.igem.org/wiki/images/1/13/T--Peshawar--codepen.png">
+                            <figcaption>Searching responsive menus on CodePen churns out a whole catalog of menus that you could choose from and use in your wiki.</figcaption>
+                        </figure>
+                        <p>Do you want a cool menu in your wiki? Search <em>responsive menu</em> on <a href="http://codepen.io/">CodePen</a> and will find code for a ton of responsive menus - all free to use. Similarly, you can find code for parallex, background banner video etc. You don't have to reinvent the wheel.</p>
+                        <hr>
+                        <h2>7. Typography is important</h2>
+                        <p>Typography plays a key role in the look and feel of a website. Sometime you would come across a nice website and you would want to know what font it's using. One of the easiest way to find it out is to use the <a href="https://chrome.google.com/webstore/detail/fontface-ninja/eljapbgkmlngdpckoiiibecpemleclhh">FontFaceNinja extension in Chrome</a> to identify the fonts used on different elements of a websites. You can then use these fonts on your wiki as well.</p>
+                        <figure>
+                            <img src="http://2016.igem.org/wiki/images/d/d3/T--Peshawar--font-face-ninja.gif">
+                            <figcaption>FontFaceNinja could be used to identify fonts on any element of a webpage.</figcaption>
+                        </figure>
+                        You must also take care of the <i>font size</i>, <i>line height</i>, and <i>measure</i> of your text so that everything is easily readable and looks nice at the same time. You can use the <a href="http://www.gridlover.net/try">girdlover tool</a> to choose the size of your h and p elements that follow the Golden ratio.
+                        <hr>
+                        <h2>8. Learn from your Analytics</h2>
+                        <p>Once you design you wiki, you would want to know how many visitors are visiting your website, and how much time they are spending on any particular page. <a href="https://statcounter.com/">StatCounter</a> can help you get this information, and much more. By adding StatCounter's tracking code, you can track not only how many visitors are visiting your wiki each day, but you can also get the finer details, such as their country, their browser and operating system, their screen resolution, the referring link, the view time, and duration. All this information can provide you with valuable insights that you can then use to improve your current wiki, or the one next year. For example, if you buried your Notebook page in third-level submenu, your visitors might not find the link. You will quickly find it out using the Statcounter's analytics because none of your visitors will be opening this Notebook page, and it won't get registered in the Statcounter logs.</p>
+                        <figure>
+                            <img src="http://2016.igem.org/wiki/images/b/bb/T--Peshawar--statcounter-min.png">                
+                            <figcaption>Using StatCounter you can get useful statistics on your wiki visitors: You can view their IP addresses, the browser they were using, their screen resolution and operating system, the pages they visited, and how long they remained on any particular page. Internet is a snitch, isn't it?</figcaption>
+                        </figure>
+                        <p>You can view our Statcounter visitor logs by visiting the links below:</p>
+                        <p><a href="http://statcounter.com/p11100754/summary/?guest=1">StatCounter Summary</a></p> 
+                        <p><a href="http://statcounter.com/p11100754/path/?guest=1">StatCounter Detailed log</a></p> 
+                            
+                        <hr>
+                        <h2>9. Have someone in your team with CS background for wiki design</h2>
+                        <p>When choosing the team, do have one or two people with a CS background. Developing a killer wiki would need skills in HTML, CSS, Javascript, JQuery, and Sass. So have someone who is already experienced in these skills or willing to learn them. Don't expect someone with a biology background and zero programming experience to be able to redesign the wiki.</p>
+                        <p>In case you happen to end up in a team in which no one has any programming or web development experience, then it's probably better that you stick with default iGEM wiki template and tinker with its styling to improve it or customize to your taste. But don't opt for a complete redesign because &mdash; in all likelihood &mdash; it would turn out to be a bite too big to chew.</p>
+                        <br>
+                        <h2>10. Miscellaneous</h2>
+                        <h3>CSS code to make the iGEM's right-side menus and other annoyances disappear</h3>
+                        <p>Once you have made your offline website, you will then paste its HTML code on your team's page, and link the CSS and JavaScript files (which you would also have to upload to iGEM). But you will find that the iGEM right-side menu will be still there, and your layout will be all messed up.</p>
+
+                        <p>We went through this and spent a fair amount of time solving it. Just add the following code at the top of your CSS to make all the annoyances disappear.</p>
+<pre>
+<code class="language-css">
+//Override iGEM wiki settings
+#sideMenu,
+#top_title {
+    display: none;
+}
+
+#content {
+    width: 100vw;
+    padding: 0px;
+    border: none;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    position: relative;
+}
+
+#globalWrapper {
+    font-size: inherit;
+    padding-bottom: 0;
+}
+
+#top_menu_under {
+    height: 0px;
+}
+
+ul {
+    list-style-image: none; //removes the iGEM wiki bullets
+}
+</code>
+</pre>
+                    <h3>MathJax CSS hack to remove annoyning right-side spans</h3>
+<pre>
+<code class="language-css">
+.MathJax nobr>span.math>span {
+    border-left-width: 0 !important;
+}
+</code>
+</pre>
+                    <h3>MathJax hack to make inline equations work</h3>
+                    <p>MathJax's inline equations using $..$ does not work out-of-the-box. You need to add the following code to you head section to make it work.</p>
+
+<pre>
+<code class="language-markup">
+&lt;script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+    });
+&lt;/script> 
+</code>
+</pre>
+
+                    </div>
+                    <!--End of centered-content-wrapper-->
+                </div>
+                <!--End of centered-content-wrapper-container-->
+                
+                <div class="all-in-one-footer-container">
+    <div class="all-in-one-footer-address">
+        <h3>Reach Us</h3>
+        <h4><img id="location" src="http://2016.igem.org/wiki/images/7/7c/T--Peshawar--location-compressor.png">  Institute of Integrative Biosciences, 
+        <br>CECOS University of IT &amp; Emerging Sciences, 
+        <br>Phase 6, F-5, Hayatabad, Peshawar, Pakistan 
+        </h4>
+        <h4 id="h4-email"><img id="email" src="http://2016.igem.org/wiki/images/0/04/T--Peshawar--email.png"> 
+        <a href="mailto:iib@cecos.edu.pk">iib@cecos.edu.pk</a> 
+        </h4>
+        <h4 id="h4-phone"><img id="phone" src="http://2016.igem.org/wiki/images/c/c6/T--Peshawar--phone-compressor.png">  +92 91 5860291</h4>
+    </div>
+
+    <div class="all-in-one-sponsors">
+        <h3>Our Partners</h3>
+        <br>
+        <div class="sponsors-icons govt-kpk">
+            <a href="http://kp.gov.pk/" target="_blank">
+                <img src="http://2016.igem.org/wiki/images/a/a1/T--Peshawar--govt-of-kpk-logo-small-gs-compressed.png">
+            </a>
+        </div>
+        <div class="sponsors-icons dost">
+            <a href="http://www.dost.gov.pk/" target="_blank">
+                <img src="http://2016.igem.org/wiki/images/e/e2/T--peshawar--dost-logo-small-gs-compresed-compressor.png">
+            </a>
+        </div>
+        <div class="sponsors-icons cecos">
+            <a href="http://cecos.edu.pk/" target="_blank">
+                <img src="http://2016.igem.org/wiki/images/0/03/T--Peshawar--cecos-logo-small-gs-compressed-compressor.png">
+            </a>
+        </div>
+        <div class="sponsors-icons iib">
+            <a href="http://iib.cecos.edu.pk/" target="_blank">
+                <img src="http://2016.igem.org/wiki/images/6/60/T--Peshawar--iib-logo-small-gs-compressed-compressor.png">
+            </a>
+        </div>
+    </div>
+    <div class="all-in-one-footer-social">
+        <h3>Connect with us</h3>
+        <br>
+        <article id="social-page-footer">
+    <!--FACEBOOK-->
+    <a href="https://www.facebook.com/iGEMPeshawar2016/" target="_blank">
+        <svg class="social-page-footer-svg facebook" width="61" height="60" viewBox="0 0 61 60" xmlns="http://www.w3.org/2000/svg">
+            <title>
+                T--Peshawar--facebook-round-v2
+            </title>
+            <g id="Page-1" fill="none" fill-rule="evenodd">
+                <g id="T--Peshawar--facebook-round-v2" fill="#808184">
+                    <path d="M30.594 1.465c-15.735 0-28.536 12.8-28.536 28.537 0 15.734 12.8 28.536 28.536 28.536S59.13 45.736 59.13 30.002c0-15.736-12.8-28.537-28.536-28.537m0 58.536c-16.542 0-30-13.455-30-29.997 0-16.543 13.458-30 30-30s30 13.457 30 30c0 16.542-13.458 30-30 30" id="facebook-circle" />
+                    <path d="M22.91 25.905h3.72V22.29c0-1.597.042-4.057 1.2-5.58 1.22-1.614 2.895-2.71 5.777-2.71 4.696 0 6.672.67 6.672.67l-.933 5.514s-1.55-.45-2.997-.45c-1.447 0-2.743.52-2.743 1.966v4.205h5.936l-.414 5.386h-5.524V50H26.63V31.29h-3.72v-5.385z" id="facebook" />
+                </g>
+            </g>
+        </svg>
+    </a>
+    <!--TWITTER-->
+    <a href="https://twitter.com/igem_peshawar" target="_blank">
+        <svg class="social-page-footer-svg twitter" width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <title>
+                T--Peshawar--twitter-round-v2
+            </title>
+            <g id="Page-1" fill="none" fill-rule="evenodd">
+                <g id="T--Peshawar--twitter-round-v2" fill="#808184">
+                    <path d="M30 1.463C14.266 1.463 1.464 14.265 1.464 30S14.264 58.537 30 58.537 58.538 45.735 58.538 30 45.738 1.463 30 1.463M30 60C13.46 60 0 46.542 0 30S13.46 0 30 0c16.542 0 30 13.458 30 30S46.542 60 30 60" id="twitter-circle" />
+                    <path d="M49.642 21.783c-1.325.587-2.75.984-4.242 1.163 1.527-.914 2.698-2.36 3.247-4.085-1.428.848-3.006 1.46-4.692 1.79-1.343-1.433-3.265-2.33-5.39-2.33-4.077 0-7.384 3.308-7.384 7.385 0 .58.065 1.142.19 1.683-6.134-.31-11.576-3.247-15.222-7.718-.636 1.093-.998 2.362-.998 3.715 0 2.56 1.303 4.82 3.283 6.148-1.208-.038-2.35-.373-3.347-.923v.09c0 3.58 2.547 6.566 5.927 7.242-.62.174-1.27.26-1.946.26-.476 0-.94-.044-1.39-.13.94 2.933 3.666 5.07 6.9 5.126-2.53 1.982-5.715 3.163-9.173 3.163-.596 0-1.185-.032-1.762-.1 3.27 2.093 7.15 3.316 11.32 3.316 13.59 0 21.015-11.25 21.015-21.013 0-.32-.006-.64-.02-.955 1.444-1.043 2.7-2.344 3.685-3.824" id="twitter" />
+                </g>
+            </g>
+        </svg>
+    </a>
+    <!--INSTAGRAM-->
+    <a href="https://www.instagram.com/igempeshawar/" target="_blank">
+        <svg class="social-page-footer-svg instagram" width="61" height="61" viewBox="0 0 61 61" xmlns="http://www.w3.org/2000/svg">
+            <title>
+                T--Peshawar--instagram-round-v2
+            </title>
+            <g id="Page-1" fill="none" fill-rule="evenodd">
+                <g id="T--Peshawar--instagram-round-v2" fill="#808184">
+                    <path d="M30.802 1.64c-15.736 0-28.537 12.802-28.537 28.537s12.8 28.537 28.537 28.537c15.735 0 28.536-12.802 28.536-28.537S46.538 1.64 30.802 1.64m0 58.537c-16.542 0-30-13.458-30-30s13.458-30 30-30 30 13.458 30 30-13.458 30-30 30" id="instagram-circle" />
+                    <path d="M45.3 42.212c0 1.902-1.548 3.446-3.45 3.446H19.763c-1.903 0-3.45-1.544-3.45-3.446v-14.73h5.375c-.464 1.144-.727 2.39-.727 3.695 0 5.426 4.417 9.837 9.845 9.837 5.428 0 9.843-4.41 9.843-9.837 0-1.306-.264-2.55-.725-3.694H45.3v14.73zm-19.63-14.73c1.15-1.593 3.022-2.64 5.137-2.64 2.115 0 3.985 1.047 5.136 2.64.75 1.042 1.203 2.314 1.203 3.695 0 3.492-2.845 6.33-6.34 6.33-3.494 0-6.336-2.838-6.336-6.33 0-1.38.45-2.653 1.2-3.694zm18.174-10.145l.795-.004v6.097l-6.083.022-.022-6.098 5.308-.017zM41.85 13.19H19.763c-3.835 0-6.957 3.118-6.957 6.952v22.07c0 3.834 3.122 6.952 6.957 6.952H41.85c3.834 0 6.957-3.118 6.957-6.952v-22.07c0-3.834-3.123-6.952-6.958-6.952z" id="instagram" />
+                </g>
+            </g>
+        </svg>
+    </a>
+    <!--BLOG-->
+    <a href="http://www.synbiokp.com/blog/" target="_blank">
+        <svg class="social-page-footer-svg blog" width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <title>
+                T--Peshawar--blog-round-v2
+            </title>
+            <g id="Page-1" fill="none" fill-rule="evenodd">
+                <g id="T--Peshawar--blog-round-v2" fill="#808184">
+                    <path d="M30 1.463C14.265 1.463 1.463 14.263 1.463 30c0 15.735 12.802 28.536 28.537 28.536S58.537 45.736 58.537 30 45.735 1.463 30 1.463M0 30C0 13.458 13.458 0 30 0s30 13.458 30 30-13.458 30-30 30S0 46.542 0 30z" id="blog-circle" />
+                    <path d="M34.95 19.916c7.654 0 14 6.357 14 14.025 0 7.64-6.375 14.03-14 14.03h-7.942C19.393 47.968 13 41.57 13 33.94V15.22c0-1.78 1.47-3.255 3.25-3.255 1.768 0 3.247 1.482 3.247 3.256 0 6.24.01 12.48.01 18.72 0 4.11 3.4 7.52 7.5 7.52h7.943c4.084 0 7.504-3.424 7.504-7.514 0-4.108-3.403-7.516-7.504-7.516h-8.568c-1.777 0-3.248-1.475-3.248-3.255 0-1.773 1.477-3.254 3.248-3.254h8.568z" id="blog" />
+                </g>
+            </g>
+        </svg>
+    </a>
+</article>
+        <div class="wiki-design">
+            <!-- <h4>Wiki designed by <a href="http://2016.igem.org/Team:Peshawar/Team">Adnan Niazi</a></h4> -->
+            <br>
+            <button><a href="http://2016.igem.org/Team:Peshawar/Wiki">Learn iGEM Wiki design</a></button>
+        </div>
+    </div>
+</div>
+<!--End of all-in-one-footer-container-->
+            </section>
+            <!--End of inner-container-->
+        </div>
+        <!--End of on-canvas container for all the content-->
+    </div>
+    <!--End of outermost box-->
+    <script src="js/script-min.js" type="text/javascript"></script>
+    <!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=11100754; 
+var sc_invisible=1; 
+var sc_security="135c4f8d"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="shopify
+analytics ecommerce" href="http://statcounter.com/shopify/"
+target="_blank"><img class="statcounter"
+src="//c.statcounter.com/11100754/0/135c4f8d/1/"
+alt="shopify analytics ecommerce"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide --></body>
+
+</html>

@@ -1,0 +1,78 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the Description page.
+// -----------------------------------------------------------------------------
+.description {
+    ul {
+        list-style-type: square;
+        line-height: 1.6em;
+        padding-left: 2em;
+    }
+    ol {
+        li {
+            list-style-type: decimal;
+        }
+    }
+
+    h2{
+    	color: #794d70;
+    }
+    h3{
+    	color: rgba(121, 77, 112, 0.75);
+    }
+    h4{
+    	color: rgba(121, 77, 112, 0.75);
+
+    }
+    ul, ol, p{
+    	color: black;
+    }
+}
+
+//PARALLEX CODE
+// Based on http://codepen.io/skeurentjes/
+.description-full {
+    $parallax-window-height: 30em;
+    $parallax-background-height: $parallax-window-height * 1;
+    .parallax-window {
+        max-height: $parallax-window-height;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        width: 100%;
+    }
+    .parallax-static-content {
+        color: #9A9A8A;
+        padding: 8em 0;
+        position: relative;
+        z-index: 9;
+    }
+    .parallax-background {
+        background: url("http://2016.igem.org/wiki/images/3/34/T--Peshawar--project-collage-compressor.jpg") repeat;
+        background-position: top;
+        background-size: cover;
+        background-color: beige;
+        height: $parallax-background-height;
+        left: 0;
+        position: absolute;
+        top: - $parallax-window-height / 3;
+        width: 100%;
+    }
+    h1{
+            text-shadow: 2px 2px grey;
+            font-size: 70px;
+
+    }
+}
+
+
+#engineered-cell{
+
+		padding-top: 20px;
+		padding-bottom: 20px;
+        display: block;
+        margin: 0 auto;
+        -webkit-filter: drop-shadow(5px 5px 5px #222);
+        filter: drop-shadow(5px 5px 5px #222);
+   
+
+}

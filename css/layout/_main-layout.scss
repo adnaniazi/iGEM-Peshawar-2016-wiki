@@ -1,0 +1,710 @@
+    // -----------------------------------------------------------------------------
+    // This file contains all styles related to the side navigation of the site.
+    // -----------------------------------------------------------------------------
+    //Override iGEM wiki settings
+    #sideMenu,
+    #top_title {
+        display: none;
+    }
+    
+    #content {
+        width: 100vw;
+        padding: 0px;
+        border: none;
+        color: black;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #fff;
+        position: relative;
+    }
+    
+    #globalWrapper {
+        font-size: inherit;
+        padding-bottom: 0;
+    }
+    
+    #top_menu_under {
+        height: 0px;
+    }
+    
+    ul {
+        list-style-image: none; //removes the iGEM wiki bullets
+    }
+    
+    #HQ_page p {
+        font-family: $base-font-family;
+        font-size: 17px;
+    }
+    
+    #HQ_page a {
+        text-decoration: none;
+    }
+    
+    // VARIABLES
+    $mobile: new-breakpoint(max-width 1000px);
+    $tablet: new-breakpoint(max-width 1200px); //Fuck the tablet; not using this breakpoint
+    $large: new-breakpoint(max-width 6400px);
+    $reach-us-color: #1C1D2C; //#264980;
+    $our-partners-color: #000; //#323541;
+    $contact-us-color: #1C1D2C; //#1395ba;
+    $social-page-footer-svg-color: #6A6A6A; //rgba(255, 255, 255, 0.8); //#b5babe;
+    $social-off-canvas-intericon-gap: 2px;
+    $menu-color: #0D111F; //#083045; //#853962; //#D6D6D6  #59355a;;
+    $menu-link-color: #fff; //rgba(255, 255, 255, 0.92); //#817D74;
+    $menu-link-hover-color: rgba(255, 255, 255, 1); //#fff; //#ADA041; //#A38D27;
+    $menuWidth: 300px;
+    $hr-color: #eed369; //#CDC4AA;
+    hr {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: $hr-color
+    }
+    
+    // -----------------------------------------------------------------------------
+    // CODE OF FOR OFF-CANVAS SIDEMENU  
+    // -----------------------------------------------------------------------------
+    [off-canvas*=left] {
+        width: $menuWidth; //Controls the width of the sidebar menu
+        padding-top: 50px; //Controls the top space
+        padding-left: 50px;
+        text-align: right;
+        padding-right: 30px;
+        text-transform: none;
+        z-index: 3;
+        background: $menu-color;
+    }
+    
+    .navigation-list {
+        li a {
+            color: $menu-link-color;
+            position: relative; // for hover animation
+            &:hover {
+                //color: $menu-link-hover-color;
+            }
+        }
+        li a:before {
+            // for hover animation
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: $menu-link-hover-color;
+            visibility: hidden;
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+            -webkit-transition: all 0.2s ease-in-out 0s;
+            transition: all 0.2s ease-in-out 0s;
+        }
+        li a:hover:before {
+            visibility: visible;
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+        }
+    }
+    
+    // -----------------------------------------------------------------------------
+    // CODE FOR LOGO HEADER 
+    // -----------------------------------------------------------------------------
+    //$desktop-logo-height: 100px;
+    $desktop-menu-button-height: 30px;
+    .header-outer-container {
+        //background: #f2f2f2;
+        //background: radial-gradient(farthest-side, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.2) 190%) #fff;
+        //background: #fff;
+        //-webkit-box-shadow: 1px 6px 29px -9px rgba(0, 0, 0, 0.35);
+        //-moz-box-shadow: 1px 6px 29px -9px rgba(0, 0, 0, 0.35);
+        //box-shadow: 1px 6px 29px -9px rgba(0, 0, 0, 0.35);
+        //background: black;
+        .sticky-header {
+            @include outer-container(100%);
+            @include pad(20px 0px 0px 0px);
+            .logo-wrapper {
+                @include span-columns(2);
+                @include shift(5.5); //3.2
+                //background: brown;
+                @include clearfix;
+                .logo {
+                    max-width: 50%;
+                    -webkit-filter: grayscale(100%);
+                    filter: grayscale(100%);
+                    &:hover {
+                        -webkit-filter: grayscale(0%);
+                        filter: grayscale(0%);
+                    }
+                }
+            }
+        }
+    }
+    
+    // -----------------------------------------------------------------------------
+    // CODE FOR HAMBURGER NAVIAGATION
+    // -----------------------------------------------------------------------------
+    .js-toggle-left-slidebar {
+        position: fixed;
+        float: left;
+        z-index: 1;
+        height: 80px;
+        width: 100px;
+        background: url(http://2016.igem.org/wiki/images/1/1d/T--Peshawar--hamburger-icon.png) no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+    }
+    
+    .js-toggle-left-slidebar:hover {
+        filter: brightness(0);
+    }
+    
+    // -----------------------------------------------------------------------------
+    // CODE FOR OFF-CANVAS SOCIAL MAIN FOOTER 
+    // -----------------------------------------------------------------------------
+    // Turn off the circles around the icons
+    /* FILL COLOR */
+    
+    .social-main-footer-svg {
+        height: 30px;
+        width: 30px;
+        margin: $social-off-canvas-intericon-gap; //distance between social icons
+        //remove surrounding circles
+        #facebook-circle,
+        #twitter-circle,
+        #instagram-circle,
+        #blog-circle {
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+        // adjust the fill color
+        #facebook,
+        #twitter,
+        #instagram,
+        #blog {
+            fill: white;
+        }
+    }
+    
+    // hover color
+    a svg:hover #facebook {
+        fill: #3b5998;
+    }
+    
+    a svg:hover #twitter {
+        fill: #1da1f2;
+    }
+    
+    a svg:hover #instagram {
+        fill: #c13584;
+    }
+    
+    a svg:hover #blog {
+        fill: #f57d00;
+    }
+    /* Hover transitions */
+    
+    a svg #facebook,
+    a svg #twitter,
+    a svg #instagram,
+    a svg #blog {
+        transition: 200ms;
+        transition-timing-function: ease-in-out;
+        -webkit-transition: 200ms;
+        -webkit-transition-timing-function: ease-in-out;
+    }
+    
+    // -----------------------------------------------------------------------------
+    // CODE FOR ON-CANVAS SOCIAL PAGE FOOTER 
+    // -----------------------------------------------------------------------------
+    .social-page-footer-svg {
+        height: 45px;
+        width: 45px;
+        margin: 10px; //distan between social icons
+        //reomve surrounding circles
+        #facebook-circle,
+        #twitter-circle,
+        #instagram-circle,
+        #blog-circle {
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+        // adjust the fill color
+        #facebook,
+        #twitter,
+        #instagram,
+        #blog {
+            fill: $social-page-footer-svg-color;
+        }
+    }
+    
+    .social-page-footer-container {
+        @include outer-container(100%);
+        @include pad();
+        text-align: center;
+    }
+    
+    // -----------------------------------------------------------------------------
+    // CODE OF DEVICES GREATER THAN 1000px Width
+    // -----------------------------------------------------------------------------
+    @include media($large) {
+        // Code of full-width content
+        .full-content-wrapper-container {
+            @include outer-container(100%);
+            .full-width-content-wrapper {
+                @include span-columns(12);
+                //background-color: red;
+            }
+        }
+        // Code for centered content
+        .centered-content-wrapper-container {
+            @include outer-container();
+            .centered-content-wrapper {
+                @include span-columns(8);
+                @include shift(2);
+                //background-color: green;
+            }
+        }
+        //Code for all in one footer
+        .all-in-one-footer-container {
+            color: rgba(255, 255, 255, 0.8);
+            @include fill-parent();
+            @include row(table);
+            background-color: red;
+            text-align: center;
+            .all-in-one-footer-address {
+                @include span-columns(4);
+                //background-color: #F2F2F2;
+                @include pad();
+                background-color: $reach-us-color;
+            }
+            .all-in-one-footer-social {
+                @include span-columns(4);
+                //background-color: #F2F2F2;
+                @include pad();
+                background-color: $contact-us-color;
+            }
+            .all-in-one-sponsors {
+                @include span-columns(4);
+                //background-color: #F9F9F9;
+                @include pad();
+                text-align: center;
+                @include reset-display;
+                background-color: $our-partners-color;
+                .govt-kpk {
+                    @include span-columns(2 of 4);
+                    text-align: right;
+                    //background: yellow;
+                    @include pad();
+                }
+                .dost {
+                    @include span-columns(2 of 4);
+                    text-align: left;
+                    //background: orange;
+                    @include pad();
+                    @include omega();
+                }
+                .cecos {
+                    @include span-columns(2 of 4);
+                    text-align: right;
+                    //background-color: red;
+                    @include pad();
+                }
+                .iib {
+                    @include span-columns(2 of 4);
+                    text-align: left;
+                    //background-color: green;
+                    @include pad();
+                }
+                .govt-kpk img {
+                    max-width: 90%;
+                    &:hover {
+                        content: url(http://2016.igem.org/wiki/images/2/23/T--Peshawar--govt-of-kpk-logo-small-compressed.png);
+                    }
+                }
+                .dost img {
+                    max-width: 90%;
+                    &:hover {
+                        content: url(http://2016.igem.org/wiki/images/f/f0/T--peshawar--dost-logo-small-compresed2.png);
+                    }
+                }
+                .cecos img {
+                    max-width: 85%;
+                    &:hover {
+                        content: url(http://2016.igem.org/wiki/images/5/58/T--Peshawar--cecos-logo-small-compressed.png);
+                    }
+                }
+                .iib img {
+                    max-width: 85%;
+                    &:hover {
+                        content: url(http://2016.igem.org/wiki/images/f/f7/T--Peshawar--iib-logo-small-compressed.png);
+                    }
+                }
+            }
+        }
+    }
+    
+    // -----------------------------------------------------------------------------
+    // CODE OF DEVICES LESS THAN 1000px Width
+    // -----------------------------------------------------------------------------
+    @include media($mobile) {
+        //font size
+        p {
+            font-size: 20px;
+            line-height: 37px;
+        }
+        .navigation-list a {
+            font-size: 25px;
+        }
+        .navigation-list li {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        [off-canvas*=left] {
+            width: $menuWidth*1.3; //Controls the width of the sidebar menu
+        }
+        .header-outer-container {
+            .sticky-header {
+                @include outer-container(100%);
+                @include pad(20px 0px 0px 0px);
+                .logo-wrapper {
+                    @include span-columns(4);
+                    @include shift(5); //3.2
+                    //background: brown;
+                    @include clearfix;
+                }
+            }
+        }
+        // Code of full-width content
+        .full-content-wrapper-container {
+            @include outer-container(100%);
+            .full-width-content-wrapper {
+                @include span-columns(12);
+            }
+        }
+        // Code for centered content
+        .centered-content-wrapper-container {
+            @include outer-container();
+            .centered-content-wrapper {
+                @include span-columns(10);
+                @include shift(1);
+            }
+        }
+        //Code for all in one footer
+        .all-in-one-footer-container {
+            @include reset-display;
+            @include outer-container();
+            background-color: red;
+            text-align: center;
+            .all-in-one-footer-address {
+                @include span-columns(12);
+                //background-color: #F2F2F2;
+                @include reset-display;
+                background-color: $reach-us-color;
+            }
+            .all-in-one-footer-social {
+                @include span-columns(12);
+                //background-color: #F2F2F2;
+                @include reset-display;
+                background-color: $contact-us-color;
+            }
+            .all-in-one-sponsors {
+                @include span-columns(12);
+                //background-color: #F9F9F9;
+                @include reset-display;
+                background-color: $our-partners-color;
+                .cecos {
+                    @include span-columns(6 of 12);
+                    text-align: right;
+                    //background-color: red;
+                    @include pad();
+                }
+                .govt-kpk {
+                    @include span-columns(6 of 12);
+                    text-align: right;
+                    //background: yellow;
+                    @include pad();
+                }
+                .dost {
+                    @include span-columns(6 of 12);
+                    text-align: left;
+                    @include omega();
+                    //background: orange;
+                    @include pad();
+                }
+                .iib {
+                    @include span-columns(6 of 12);
+                    text-align: left;
+                    //background-color: green;
+                    @include pad();
+                }
+                .govt-kpk img {
+                    max-width: 50%;
+                }
+                .dost img {
+                    max-width: 50%;
+                }
+                .cecos img {
+                    max-width: 50%;
+                }
+                .iib img {
+                    max-width: 50%;
+                }
+                .social-page-footer-svg {
+                    height: 35px;
+                    width: 35px;
+                    margin: 7px; //distance between social icons
+                }
+            }
+        }
+    }
+    
+    // -----------------------------------------------------------------------------
+    // CODE FOR SOFTWARE CREDITS
+    // -----------------------------------------------------------------------------
+    .bourbon {
+        filter: grayscale(1);
+    }
+    
+    .bourbon img {
+        &:hover {
+            content: url(http://2016.igem.org/wiki/images/3/3d/T--Peshawar--bourbon.png);
+        }
+    }
+    
+    .neat img {
+        &:hover {
+            content: url(http://2016.igem.org/wiki/images/9/9d/T--Peshawar--neat.png);
+        }
+    }
+    
+    .bitters img {
+        &:hover {
+            content: url(http://2016.igem.org/wiki/images/1/1a/T--Peshawar--bitters.png);
+        }
+    }
+    
+    .refills img {
+        &:hover {
+            content: url(http://2016.igem.org/wiki/images/8/87/T--Peshawar--refills.png);
+        }
+    }
+    
+    // -----------------------------------------------------------------------------
+    // CODE FOR REACH US
+    // -----------------------------------------------------------------------------  
+    #email {
+        width: 15px;
+    }
+    
+    #location {
+        width: 10px;
+        //-webkit-filter: brightness(10) contrast(10);
+    }
+    
+    #phone {
+        width: 10px;
+        //-webkit-filter: brightness(10) contrast(10);
+    }
+    
+    #email,
+    #location,
+    #phone {
+        -webkit-filter: brightness(5) contrast(0);
+        margin-right: 4px;
+    }
+    
+    // -----------------------------------------------------------------------------
+    // FOOTER STYLING
+    // -----------------------------------------------------------------------------  
+    .all-in-one-footer-address,
+    .all-in-one-footer-social {
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        #h4-email {
+            margin-top: 25px;
+        }
+        #h4-phone {
+            margin-top: 2px;
+        }
+        a {
+            //color: $menu-link-color;
+            position: relative; // for hover animation
+            &:hover {
+                //color: $menu-link-hover-color;
+            }
+        }
+        a:before {
+            // for hover animation
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: $menu-link-hover-color;
+            visibility: hidden;
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+            -webkit-transition: all 0.2s ease-in-out 0s;
+            transition: all 0.2s ease-in-out 0s;
+        }
+        a:hover:before {
+            visibility: visible;
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+        }
+    }
+    
+    .all-in-one-footer-container {
+        h3 {
+            color: white;
+            font-weight: bold !important;
+        }
+        h4 {
+            color: #6A6A6A;
+            font-weight: bold !important;
+        }
+    }
+    
+    // -----------------------------------------------------------------------------    
+    // LEARN IGEM WIKI DESIGN CALL-TO-ACTION BUTON
+    // -----------------------------------------------------------------------------
+    .wiki-design {
+        h4 {
+            margin-top: 5px;
+        }
+        button {
+            background-color: transparent;
+            border: 3px solid #6A6A6A;
+            border-radius: 0px;
+        }
+        button:hover {
+            background-color: white;
+            border: 3px solid white;
+            color: $contact-us-color;
+        }
+        a {
+            color: #6A6A6A;
+        }
+        a:hover {
+            visibility: none;
+        }
+    }
+    
+    figcaption {
+        //font-style: italic;
+        font-size: 15px;
+        padding-bottom: 20px;
+        padding-top: 10px;
+        text-align: center;
+    }
+    
+    //----------------------------------------
+    // VIDEO 
+    //----------------------------------------
+    // .homepage-hero-module {
+    //     border-right: none;
+    //     border-left: none;
+    //     position: relative;
+    // }
+    // .no-video .video-container video,
+    // .touch .video-container video {
+    //     display: none;
+    // }
+    // .no-video .video-container .poster,
+    // .touch .video-container .poster {
+    //     display: block !important;
+    // }
+    // .video-container {
+    //     position: relative;
+    //     bottom: 0%;
+    //     left: 0%;
+    //     height: 100%;
+    //     width: 100%;
+    //     overflow: hidden;
+    //     background: #000;
+    // }
+    // .video-container .poster img {
+    //     width: 100%;
+    //     bottom: 0;
+    //     position: absolute;
+    // }
+    // .video-container .filter {
+    //     z-index: 100;
+    //     position: absolute;
+    //     background: rgba(0, 0, 0, 0.4);
+    //     width: 100%;
+    // }
+    // .video-container .title-container {
+    //     z-index: 1000;
+    //     position: absolute;
+    //     top: 35%;
+    //     width: 100%;
+    //     text-align: center;
+    //     color: #fff;
+    // }
+    // .video-container .description .inner {
+    //     font-size: 1em;
+    //     width: 45%;
+    //     margin: 0 auto;
+    // }
+    // .video-container .link {
+    //     position: absolute;
+    //     bottom: 3em;
+    //     width: 100%;
+    //     text-align: center;
+    //     z-index: 1001;
+    //     font-size: 2em;
+    //     color: #fff;
+    // }
+    // .video-container .link a {
+    //     color: #fff;
+    // }
+    // .video-container video {
+    //     position: absolute;
+    //     z-index: 0;
+    //     bottom: 0;
+    // }
+    // .video-container video.fillWidth {
+    //     width: 100%;
+    // }
+    //HTML5 VIDEOS WITH CONTROL 
+    .engagement-video {
+        margin-left: auto;
+        margin-right: auto;
+        display: block
+    }
+    
+    //VIDEO OVERLAY
+    .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        pointer-events: none;
+        opacity: 0.5;
+        background-repeat: repeat;
+        z-index: -10;
+    }
+    
+    //TABLE CELL COLOR FOR PARTS PAGES
+    td {
+        height: 100%;
+    }
+    
+    .pink-cell {
+        background-color: #D3335F;
+        width: 100%;
+        height: 100%;
+        display: block;
+        color: white;
+        text-align: center;
+    }
+    
+    .pink-text {
+        color: white #D3335F;
+        padding-left: 2em;
+        padding-top: 2em;
+        padding-bottom: 2em;
+    }

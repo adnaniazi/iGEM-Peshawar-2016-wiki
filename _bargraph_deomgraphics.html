@@ -1,0 +1,48 @@
+<!--Demogrpahics-->
+<script type="text/javascript">
+google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+      var data = google.visualization.arrayToDataTable([
+         ['Country', 'Number of responders', { role: 'style' }],
+         ['Brazil', 1, 'color: #3444D3' ], // CSS-style declaration
+         ['UK', 1, 'color: #00136F' ], // CSS-style declaration
+         ['UAE', 1, 'color: black' ], // CSS-style declaration
+         ['Costa Rica', 1, 'color: #C00019' ], // CSS-style declaration
+         ['Bangladesh', 1, 'color: #155900' ], // CSS-style declaration
+         ['Sweden', 1, 'color: #FEC500' ], // CSS-style declaration
+         ['Nepal', 1, 'color: #1E1A42' ], // CSS-style declaration
+         ['Indonesia', 2, 'color: #E51400' ], // CSS-style declaration
+         ['Mexico', 2, 'color: #104C02' ], // CSS-style declaration
+         ['Qatar', 2, 'color: #A20121' ], // CSS-style declaration
+         ['Isreal', 3, 'color: #2213A2' ], // CSS-style declaration
+         ['Canada', 3, 'color: #A22932' ], // CSS-style declaration
+         ['India', 5, 'color: #D3B821' ], // CSS-style declaration
+         ['USA', 9, 'color: #1789A2' ], // CSS-style declaration
+         ['Pakistan', 187, 'color: #094743' ], // CSS-style declaration
+
+      ]);
+
+
+      var options = {
+        title: 'Demographics of our survey',
+        chartArea: {width: '60%'},
+        hAxis: {
+          title: 'Number of responders',
+          minValue: 0,
+        },
+        vAxis: {
+          title: 'Country'
+        },
+        legend: { position: "none" },
+        titleTextStyle: {fontSize: 19}
+      };
+
+
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+</script>
+  <div id="chart_div" style="width: 900px; height: 400px;"></div>

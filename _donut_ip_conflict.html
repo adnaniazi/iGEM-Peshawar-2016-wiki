@@ -1,0 +1,36 @@
+    <!--If no clear agreement was made before a technology was developed, who should the finalized technology belong to?(198 responses))-->
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['#', '#'],
+          ['The team that developed it',     117],
+          ['The funding agency',     12],
+          ['The institute where the research was carried out',      38],
+          ['The organizing body of the competition to which the idea was submitted',  8],
+          ['The Principal Investigator of the team', 12],
+          ["Not sure",    33],
+        ]);
+
+        var options = {
+          title: 'If no clear agreement was made before a technology was developed, who should the finalized technology belong to?',
+          pieHole: 0.4,
+          slices: {
+            0: { color: '#134554' },
+            1: { color: '#57D09E' },
+            2: { color: '#2659E5' },
+            3: { color: '#E53762' },
+            4: { color: '#858585' },
+            5: { color: '#9140A2' },
+          },
+          titleTextStyle: {fontSize: 19},
+          legend: {textStyle: {fontSize: 16.5}}
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart9'));
+        chart.draw(data, options);
+      }
+    </script>
+
+    <div id="donutchart9" style="width: 900px; height: 500px;"></div>

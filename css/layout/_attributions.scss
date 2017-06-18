@@ -1,0 +1,206 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the Attributions page.
+// -----------------------------------------------------------------------------
+.attributions-container {
+    @include outer-container(100%);
+    @include pad();
+    color: white;
+    .attributions-wrapper {
+        //@include span-columns(12);
+        //background-color: #196E97;
+        .picture-attributions {
+            @include span-columns(3);
+            //background-color: #559771;
+            text-align: center;
+        }
+        .bio {
+            @include span-columns(9);
+            //background-color: blue;
+            h4,
+            h3 {
+                margin-top: 0;
+                margin-bottom: 10px;
+            }
+            p:last-child {
+                margin-bottom: 0;
+            }
+            h3{
+                color: white;
+            }
+        }
+    }
+}
+
+@include media($mobile) {
+    .attributions-container {
+        @include outer-container(100%);
+        @include pad();
+        .attributions-wrapper {
+            // @include span-columns(12);
+            //background-color: #196E97;
+            .picture-attributions {
+                @include span-columns(12);
+                //background-color: #559771;
+                text-align: center;
+
+                img{
+                    width: 200px;
+                }
+            }
+            .bio {
+                @include span-columns(12);
+                //background-color: blue;
+                h4,
+                h3 {
+                    margin-top: 0;
+                    margin-bottom: 10px;
+                    text-align: center;
+                }
+                p:last-child {
+                    margin-bottom: 0;
+                }
+
+            }
+        }
+    }
+}
+
+.humaira {
+    background-color: #2e2d46;
+}
+
+.fazal {
+    background-color: #252839;
+}
+.zia {
+    background-color: #002a33;
+}
+.ayaz {
+    background-color: #1b0529;
+}
+
+.waqas {
+    background-color: #4b1437;
+}
+.zabta {
+    background-color: #173041;
+}
+
+.zaman {
+    background-color: #291d33;
+}
+.siraj, .wasay {
+    background-color: #09132f;
+}
+
+
+.andrew {
+    background-color: #002a33;
+}
+
+.fahim {
+    background-color: #4c5456;
+}
+
+.illyas {
+    background-color: #062140;
+}
+
+.johar {
+    background-color: #024667;
+}
+
+.natasha {
+    background-color: #18121E;
+}
+
+.mukhtar {
+    background-color: #155765;
+}
+
+.rabail {
+    background-color: #21263b;
+}
+
+.uzair {
+    background-color: #1B0529;
+}
+
+.salman {
+    background-color: #00303F;
+}
+
+.faaiz {
+    background-color: #311c39;
+}
+
+.carlos {
+    background-color: #192231;
+}
+
+.abida {
+    background-color: #01313b;
+}
+
+.waqas {
+    background-color: #000000;
+}
+
+.vilnius {
+    background-color: #252839;
+}
+
+.technion {
+    background-color: #4D505B; //#062140;
+}
+
+.metu {
+    background-color: #482a3e; //#062140;
+}
+
+.iit {
+    background-color: #331632;
+}
+
+.dawood {
+    background-color: #18121E;
+}
+
+
+
+
+//PARALLEX CODE
+// Based on http://codepen.io/skeurentjes/
+.attributions-full {
+    $parallax-window-height: 30em;
+    $parallax-background-height: $parallax-window-height * 2;
+    .parallax-window {
+        max-height: $parallax-window-height;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        width: 100%;
+    }
+    .parallax-static-content {
+        color: #9A9A8A;
+        padding: 8em 0;
+        position: relative;
+        z-index: 9;
+    }
+    .parallax-background {
+        background: url("http://2016.igem.org/wiki/images/6/6f/T--Peshawar--collage3-compressor.jpg") repeat;
+        background-position: top;
+        background-size: cover;
+        background-color: beige;
+        height: $parallax-background-height;
+        left: 0;
+        position: absolute;
+        top: - $parallax-window-height / 3;
+        width: 100%;
+    }
+    h1{
+            text-shadow: 2px 2px grey;
+            font-size: 70px;
+
+    }
+}

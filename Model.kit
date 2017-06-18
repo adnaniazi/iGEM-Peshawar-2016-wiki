@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" type="image/png" href="http://2016.igem.org/wiki/images/f/f5/T-Peshawar--favicon-v1-compressor.png">
+    <title>Modeling - iGEM Peshawar 2016</title>
+    <!--Mind the order of loader and CSS-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
+        }
+        });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+</head>
+
+<body>
+    <div class="outermost-box">
+        <!--@import "_floating_button_wrapper.kit"-->
+        <!--@import "_off_canvas_slidebar_nav.kit"-->
+        <div canvas="container">
+            <section class="inner-container">
+                <!--@import "_header.kit"-->
+                <!--@import "_inlineJS_menu_button.kit"-->
+
+                <div class="full-content-wrapper-container">
+                    <div class="full-width-content-wrapper">
+                    </div>
+                    <!--End of full-width-content-wrapper-->
+                </div>
+
+                <div class="full-content-wrapper-container">
+                    <div class="full-width-content-wrapper modeling-full">
+                        <div id="js-parallax-window" class="parallax-window">
+                          <div class="parallax-static-content">
+                            <h1>Modeling and Simulation</h1>
+                            <div class="video-overlay" style="background-image: url(&quot;https://d3k5xyayaartr5.cloudfront.net/_assets/pattern-overlays/patterns/black-medium-checks.png&quot;);"></div>
+                          </div>
+                          <div id="js-parallax-background" class="parallax-background"></div>
+                        </div>
+                    </div>
+                    <!--End of full-width-content-wrapper-->
+                </div>
+                <!--End of full-width-content-wrapper-container-->
+
+
+
+
+
+                <!--End of full-width-content-wrapper-container-->
+                <div class="centered-content-wrapper-container model">
+                    <div class="centered-content-wrapper">
+                        <h2>Why model?</h2>
+                        <p>Before building a part or a device in lab, it is probably a good idea to simulate it in a simulation package &mdash; such as SimBiology, Cello, or GenoCAD &mdash; to check if the part or device one intends to make would work the way one wants it to. Although simulation can't solve all the problems that one might encounter during the actual physical design, it can certainly reduce them, and help in getting a better understanding of how a design behaves under different parameters and conditions.</p>
+
+                        <p>Our project has two biological ystems: one for detection of corbon monoxide, and another for detection for oxides of nitrogen. Below we show you how we modelled and simulated both these systems.</p> 
+                        
+                        <h2>Modeling of the CO-sensing system</h2>
+
+                        <p>In our CO-sensing system, the CO binds to CooA (an activator). It activates the activator protein, and so the activated activator protein (CooA)2CO binds to promoter and initiates transcription.</p>
+                        
+                        <p>The reactions which take place can be given as:</p>
+
+                        $$\textrm{(CO)}+\textrm{(CooA)}_2 \longleftrightarrow \textrm{[(CooA)2CO]} \label{R1} \tag{R1}$$
+
+                        <p>The equattion above represents the first reaction that takes place in our system in which the CO taken from the environment binds to the CooA dimer.  The CooA protein is constantly expressed in our system using a constitutive promoter. The coefficient 2 represents the number of CO which bind to CooA; this number was taken from the literature.</p>
+                        
+                        <p>To develop a dissociation constant of this equation, we can write it as:</p>
+
+                        $$KI=\frac{\textrm{[CO].[CooA]}}{\textrm{[(CooA)2CO]}} \label{1} \tag{1}$$
+
+                        <p>Note that the concentrations of $\textrm{[CO]}$, $\textrm{[CooA]}$, and $\textrm{[(CooA)2CO]}$ are at equilibrium before the start of the reaction R1.</p>
+                        <p>The second reaction that takes place in our system is the binding of the activated activator protein complex of $\textrm{[(CooA)2CO]}$ to the promoter Pr.</p>
+
+                        <p>It can be described as:</p>
+
+                        $$\textrm{[(CooA)2CO]} \longleftrightarrow \textrm{[(CooA)2CO.Pr]} \label{R2} \tag{R2}$$
+                        
+                        <p>Here, $\textrm{[(CooA)2CO.Pr]}$ represents the activated protein $\textrm{[(CooA)2CO]}$ bound to the promoter.</p>
+
+                        <p>To develop a dissociation constant of this equation, we can write as:</p>
+                        
+                        $$KP=\frac{\textrm{[(CooA)2CO]}}{\textrm{[(CooA)2CO.Pr]}} \label{2} \tag{2}$$
+
+                        <p>Now, in order to get an equation which describes the change in the concentration of mRNA with time we develop the following differential equation:</p>
+                        $$\frac{d(mRNA)}{dt}=k_{on1}.P_{exp}-\gamma_1.[mRNA] \label{3} \tag{3}$$
+
+                        <p>where, $k_{on1}$ is represents the formation rate constant of the mRNA, and $\gamma_1$ represents the degradation rate constant of mRNA.</p>
+
+                        <p>In Eq. (\ref{3}) it can be seen that the change in the $\textrm{[mRNA]}$ with time is equal to the difference of the formation rate of mRNA and  its degradation rate.</p>
+
+                        <p>The initial conditions for the Eq. (\ref{3}) are assumed to be:</p>
+
+                        $$\textrm{[mRNA(t=0)] = 0 molar}$$
+
+                        <p>This means that at the time $t=0$ sec (initial time), there are no molecules of mRNA encoding for our desired chromoprotein in the cell.</p>
+
+                        <p>In Eq. (\ref{3}), $P_{exp}$ represents the probability that the promoter will be activated by the activated activator protein complex $\textrm{[(CooA)2CO]}$. It can be calculated by the following equation:</p>
+                        $$P_{exp} = \frac{\textrm{number of situations in which the promoter will be activated}}{\textrm{total number of situations}} = \frac{w}{z} \label{4} \tag{4}$$
+
+                        <p>In our modeling of the CO-sensing system, we have assumed that at any moment only one molecule of the activated activator protein complex $\textrm{[(CooA)2CO]}$ can bind to the promoter, and that the \ref{R1} reaches equilibrium before the transcription of the system begins.</p>
+
+                        <p>To develop our equations further, we say that the number of situations in which a promoter will be activated is equal to:</p>
+                        $$ w=\textrm{[(CooA)2CO.Pr]}=\frac{\textrm{[(CooA)2CO]}}{K_p} \label{5} \tag{5}$$
+
+                        <p>Eq. (\ref{5}) demonstrates the relation between the binding of the activated activator protein complex $\textrm{[(CooA)2CO]}$, showing that it is equal to the amount of $\textrm{[(CooA)2CO]}$ upon the dissociation constant of the binding of $\textrm{[(CooA)2CO]}$ to the promoter.</p>
+
+                        <p>To simplify this equation, we assume that the number of situations in which the promoter will not be activated by $\textrm{[(CooA)2CO]}$ is equal to $1$.</p>
+
+                        <p>Note that this assumption is made because the only situation in which transcription will not take place is when there are no molecules bound to the promoter.</p>
+
+                        <p>Substituting the assumptions in Eq. (\ref{5}), we get:</p>
+                        $$ z=w+1=\frac{\textrm{[(CooA)2CO]}}{K_p}+1  \label{6} \tag{6}$$
+                        <p>where, $z$ represents the total number of situations, $w$ represents the number of situations in which the promoter will be activated, and $1$ represents the number of situations in which the promoter will not be activated.</p>
+                        <p>Sustituting Eq. (\ref{5}) and (\ref{6}) into Eq. (\ref{4}), we get:</p>
+
+                        $$P_{exp} = \frac{w}{z} = \frac{\frac{\textrm{[(CooA)2CO]}}{K_p}}{\frac{\textrm{[(CooA)2CO]}}{K_p}+1} \label{7} \tag{7}$$
+
+                        <p>As we want our $P_{exp}$ to be expressed in the terms of $\textrm{[CO]}$ and $\textrm{[CooA]}$ separately instead of $\textrm{[(CooA)2CO]}$, we repeat these above equations by taking into consideration \ref{R1} and its dissociation constant $\textrm{KI}$.</p>
+
+                        <p>By doing so, we get:</p>
+                        $$P_{exp} = \frac{\frac{\textrm{[CooA]}.\frac{\frac{\textrm{CO}}{K_I}}{1+\frac{\textrm{CO}}{K_I}}}{K_p}} {1+\frac{\textrm{[CooA]}.\frac{\frac{\textrm{CO}}{K_I}}{1+\frac{\textrm{CO}}{K_I}}}{K_p}} \label{8} \tag{8}$$
+
+                        <p>As the Eq. (\ref{8}) demonstrates, $P_{exp}$ depends only upon the concentration of $\textrm{[CO]}$ and $\textrm{[CooA]}$.</p>
+                        <p>Recall Eq. (\ref{3})</p>
+                        $$\frac{d(\textrm{mRNA})}{dt}=k_{on1}.P_{exp}-\gamma_1.[\textrm{mRNA}]$$
+
+                        <p>The initial condition for this equation was $\textrm{[mRNA(t=0)] = 0 molar}$.</p>
+
+                        <p>The analytical solution of this differential equation is equal to:</p>
+                        $$[mRNA]=\frac{k_{on1}.P_{exp}}{\gamma_1}(1-e^{-\gamma_1t})$$
+
+                        <p>Now that we have got the equation describing the change in concentration of mRNA, we can use the same method to derive an equation which describes the change in the concentration of the chromoprotein in time as following:</p>
+                        $$\frac{d\textrm{[CP]}}{dt} = k_{on2}.\textrm{[mRNA]}-\gamma_2\textrm{[CP]} \label{9} \tag{9}$$
+
+                        <p>Here, $k_{on2}$  is the formation rate constant of the chromoprotein and $\gamma_2$  is the degradation rate constant of the chromoprotein.</p>
+
+                        <br>
+                        <figure id="co-block">
+                            <img src="http://2016.igem.org/wiki/images/f/f2/T--Peshawar--co-block-diagram.png">
+                            <figcaption>
+                            <b>Figure 1: </b> The central theme considered for mathematical modeling of CO system, where the chromoprotein DNA leads to the production of mRNA of chromoprotein and then subsequently of chromoprotein. $K_{on1}$ is the rate of transcription of chromoprotein DNA, while $K_{on2}$ is the translation rate of mRNA of chromoprotein. Also, $\gamma_1$ is the degradation rate of mRNA of cheomoprotein and $\gamma_2$ is the degradation rate of chromoprotein.             
+                            </figcaption>
+                        </figure>
+                        <br>
+
+
+                        <p>Again, the initial conditions for this equation are assumed to be:</p>
+                        $$\textrm{[CP(t=0)] = 0 molar}$$
+
+                        <p>which states that at the initial time, the amount of chromoprotein in the cell is equal to $0$.</p>
+
+                        <p>Here on forth, we will repeat the steps from Eq. (\ref{4}) to Eq. (\ref{8}) and arrive to the analytical solution of the differential equation of Eq. (\ref{9}), which is:</p>
+                        $$\textrm{[CP]} = k_{on2}.\frac{k_{on1}.P_{exp}}{\gamma_1.\gamma_2}(1-e^{-\gamma_2t}) + k_{on2}.\frac{k_{on1}.P_{exp}}{\gamma_1(\gamma_1-\gamma_2)}(e^{-\gamma_2t}-e^{-\gamma_1t}) \label{10} \tag{10}$$
+
+                        <p>Eq. (\ref{10}) is the final equation which describes the amount of $\textrm{[CP]}$ along with the amount of $\textrm{[mRNA]}$.</p>
+
+                        <h3>Assumptions</h3>
+
+                        <ol>
+                            <li>1. Reactions \ref{R1} and \ref{R2} reach equilibrium before the transcription begins.</li>
+                            <li>2. Only one molecule of the complex $\textrm{[(CooA)2CO]}$ can be bound to the promoter at a time.</li>
+                            <li>3. $\textrm{[mRNA(t=0)] = 0 molar}$</li>
+                            <li>4. $\textrm{[CO]}$ and $\textrm{[CooA]}$ concentrations inside the cell are constant.</li>
+                        </ol>
+
+                        <h2>Simulation of the CO-sensing system</h2>
+                        <h3>Simulation parameters</h3>                            
+                        <br>
+                        <table class="table-minimal">
+                            <caption><b>Table 1:</b> Parameters, their description, and their values used in MATLAB simulation of CO-sensing system.</caption>
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>$\textrm{[CO]}$</td>
+                                    <td>Carbon monoxide concentration at equilibrium</td>
+                                    <td>$\textrm{10}$</td>
+                                </tr>
+                                <tr>
+                                    <td>$\textrm{[CooA]}$</td>
+                                    <td>CooA protein concentration at equilibrium</td>
+                                    <td>$11$</td>
+                                </tr>
+                                <tr>
+                                    <td>$\textrm{KI}$</td>
+                                    <td>Dissociation constant of the binding of CO to CooA</td>
+                                    <td>$\textrm{0.011 mM}$</td>
+                                </tr>
+                                <tr>
+                                    <td>$\textrm{KP}$</td>
+                                    <td>Dissociation Constant of the binding of $\textrm{(CO2CooA)}$ to the promoter</td>
+                                    <td>$\textrm{0.000009}$ $\textrm{min}^{-1}$</td>
+                                </tr>
+                                <tr>
+                                    <td>Kon1</td>
+                                    <td>Formation rate constant of mRNA</td>
+                                    <td>$\textrm{0.001}$ $\textrm{min}^{-1}$</td>
+                                </tr>
+                                <tr>
+                                    <td>Kon2</td>
+                                    <td>Formation rate constant of the chromoprotein</td>
+                                    <td>0.006 $\textrm{min}^{-1}$ / 0.0051 $\textrm{min}^{-1}$</td>
+                                </tr>
+                                <tr>
+                                    <td>Gama1 ($\gamma$)</td>
+                                    <td>Degradation rate constant of the mRNA</td>
+                                    <td>$\textrm{0.00039}$ $\textrm{min}^{-1}$</td>
+                                </tr>
+                                <tr>
+                                    <td>Gama2 ($\gamma$)</td>
+                                    <td>Degradation rate constant of the chromoprotein</td>
+                                    <td>$\textrm{0.001}$ $\textrm{min}^{-1}$</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br>
+
+                        <h3>Simulation results</h3>
+                        <br><br>
+
+                        <figure>
+                         <!--@import "_lineChart_co_sensor.html"-->
+                            <figcaption>
+                                <b>Figure 2:</b> Activity of the different promoters after stimulation by carbon monoxide. The strong promoter pCooF, shown in blue, is yielding higher level of expression than the weak promoter pCooM, shown in violet. The difference between the Strong promoter (pCooF) and the weak promoter (pCooM) is meaningful, and both of these promoters will express enough chromoprotein to be visual. Hence, our goal is achieved.
+                            </figcaption>
+                        </figure>
+                        <h3>Conclusion</h3>
+                        <p>It is clear from the results that our model will achieve the steady state and give us the amount of chromoprotein that can be visualized.</p>
+
+                        <h3>MATLAB Code</h3>
+<pre>
+<code class="language-matlab">
+function dx = ODEfun_CooM(t,x)
+    dx      = zeros(1,2);
+    %x is a vector (x(1),x(2))
+    %x(1) = [mRNA]
+    %x(2) = [Chromoprotein]
+    KI      = 0.011;    %Dissociation constant of the binding of CO to CooA
+    KP      = 0.1;      %Dissociation constant of the binding of 
+                        %(CO2CooA) to the promoter.
+    Kon1    = 0.001;    %Formation rate constant of mRNA
+    Kon2    = 0.0051;   %Formation rate constant of the CP
+    gama1   = 0.00039;  %Degradation rate constant of mRNA
+    gama2   = 0.002;    %Degradation rate constant of the CP
+    co      = 10;       %Concentration of CO
+    cooa    = 11;       %Concentration of CooA
+    w       = (cooa*co/(KI*(1+co/KI)))/KP;
+    z       = (cooa*co/(KI*(1+co/KI)))/KP+1;
+    P_exp   = w/z;
+    dx1     = (Kon1*P_exp)-(gama1*x(1));    %Rate equation of mRNA
+    dx2     = (Kon2*x(1))-(gama2*x(2));     %Rate equation of CP
+    dx      = [dx1;dx2];
+end
+
+%Save this code as ODEfun_CooM.m file
+</code>
+</pre>
+
+<pre>
+<code class="language-matlab">
+function dx = ODEfun_CooF(t,x)
+    dx      = zeros(1,2);
+    %x is a vector [x(1),x(2)]
+    %x(1) = [mRNA]
+    %x(2) = [chromoprotein]
+    KI      = 0.011;    %Dissociation constant of the binding of CO to CooA
+    KP      = 0.1;      %Dissociation constant of the binding of 
+                        %(CO2CooA) to the promoter.
+    Kon1    = 0.001;    %Formation rate constant of mRNA
+    Kon2    = 0.006;    %Formation rate constant of the CP
+    gama1   = 0.00039;  %Degradation rate constant of mRNA
+    gama2   = 0.002;    %Degradation rate constant of the CP
+    co      = 10;       %Concentration of CO
+    cooa    = 11;       %Concentration of CooA
+    w       = (cooa*co/(KI*(1+co/KI)))/KP;
+    z       = (cooa*co/(KI*(1+co/KI)))/KP+1;
+    P_exp   = w/z;
+    dx1     = (Kon1*P_exp)-(gama1*x(1));    %Rate equation of mRNA
+    dx2     = (Kon2*x(1))-(gama2*x(2));     %Rate equation of CP
+    dx      = [dx1;dx2];
+end
+
+%Save this code as ODEfun_CooF.m file
+</code>
+</pre>
+                        
+<pre>
+<code class="language-matlab">
+% Clear worskpace
+clc 
+clear all
+% Code for calling the previous function:
+time_range      = 18000; 
+[T1,X1]         = ode45(@ODEfun_CooF,[0 time_range],[0 0]); 
+[T2,X2]         = ode45(@ODEfun_CooM,[0 time_range],[0 0]); 
+figure 
+plot(T1,X1(:,2),'r', T2,X2(:,2),'b', T1,X1(:,1),'g')
+legend('Conc. of chromoprotein with pCooF promoter ',...
+    'Conc. of chromoprotein with pCooM promoter',...
+    'mRNA concentration') 
+xlabel('Time [sec]'); 
+ylabel('Concentration [molar]'); 
+title('Chromoprotein concentration with different promoters (pCooF, pCooM)')
+
+%Save this code as co_sensing_system_simulation.m file
+</code>
+</pre>
+
+                        <!--NOx circuit-->
+                        <h2>Modeling of the NOx-sensing system</h2>
+                        <p>To gain an insight into the stability of NO-sensing circuit, we consider the cooperativity of NO binding with NsrR and the law of mass action. The goal of the modeling is to determine the stable expression of chromoprotein by considering a specified concentration of different parameters of the dynamic system.</p>
+                        <h3>Rate of change of chromoprotein expression</h3>
+                        <p>The following ordinary differential equations are used for determining the expression levels of chromoproteins (CP) and its mRNA (mCP):</p>
+
+                        $$\frac{d\textrm{[mCP]}}{dt} = k_{transcription}\textrm{[PyeaR]} - \gamma_m \textrm{[mCP]} \label{11} \tag{11}$$
+                        $$\frac{d\textrm{[CP]}}{dt}=k_{translation}\textrm{[mCP]}-\gamma_p\textrm{[CP]} \label{12} \tag{12}$$
+
+                        <br>
+                        <figure id="nox-block">
+                            <img src="http://2016.igem.org/wiki/images/f/f7/T--Peshawar--nox-block-diagram.png">
+                            <figcaption>
+                            <b>Figure 3: </b> The core idea used in mathematical modeling of NOx system, where the activation of PyeaR promotor leads to the production of mRNA of chromoprotein and then subsequently of chromoprotein. $K_{transcription}$ is the transcription rate of PyeaR promotor, while $K_{translation}$ is the translation rate of mRNA of chromoprotein. Additionally, $\gamma_m$ is the degradation rate of mCP (mRNA of cheomoprotein) and $\gamma_p$ is the degradation rate of CP (chromoprotein).  
+                            </figcaption>
+                        </figure>
+                        <br>
+
+                        <h3>Binding cooperativity betweeen NO AND NsrR</h3>
+                        <p>The cooperativity of $\textrm{NO}$ binding with NsrR can be found using the Hill Equation, where free $\textrm{NO}^*$ combines with the $\textrm{n}$ amount of NsrR, leading to the formation of $\textrm{n[NsrR][NO]}$ complex. The total amount of inducer $NO_T$ concentration can be described by the following equation:</p>
+                        $$\textrm{NO}_T = \textrm{n[NsrR][NO]} + [\textrm{NO}^*]$$
+
+                        <p>Additionally, $\textrm{NsrR}$ dimerization with respect to unbound $\textrm{NsrR}$ can be represented by the following equation by considering the degree of cooperativity of $\textrm{NO}$ binding:</p>    
+                        $$\frac{[\textrm{NO}^*]}{[\textrm{NO}_T]} = \frac{1}{1+\left(\frac{NsrR}{K_{NO}} \right)^n} \label{13} \tag{13}$$
+
+                        <h3>Equation for PyeaR activity</h3>
+                        <p>The correlation between PyeaR activity and rate of transcription of mCP (\beta) can represented as: </p>
+                        $$\textrm{[PyeaR]}activity = \frac{\beta}{1+ \left( \frac{\textrm{NO}^*}{K_{d(\textrm{NsrR})}} \right)} \label{14} \tag{14}$$
+
+                        <h3>Solving equations for chromoprotein expressions</h3>
+                        <p>Combining the Eqs. (\ref{13}) and (\ref{14}) into equation (\ref{11}), yields:</p>
+                        $$\frac{d[\textrm{mCP}]}{dt} = \frac{k_{transcription}[\textrm{PyeaR}]}{1 + \left(\frac{[\textrm{NsrR}]}{\left(1+\left[\frac{[\textrm{NO}]}{K_{NO}}\right]^n \right)}\right) k_{d(\textrm{NsrR})} } - \gamma_m [\textrm{mCP}]$$
+
+                        <p>In order to further simplify the system, let</p>
+                        $$K=\frac{k_{transcription}[\textrm{PyeaR}]}{1 + \left(\frac{[\textrm{NsrR}]}{\left(1+\left[\frac{[\textrm{NO}]}{K_{NO}}\right]^n \right)}\right) k_{d(\textrm{NsrR})} }$$
+                        <p>Additionally, the value of $\textrm{K}$ is inversely proportional to the amount of $\textrm{NsrR}$ and directly proportional to the $\textrm{NO}$ concentration in the system. Substituting $\textrm{K}$ into the differential equation of $\textrm{mCP}$ generates the following equation:</p>
+                        $$\frac{d[\textrm{mCP}]}{dt} = K - \gamma_m [\textrm{mCP}]$$
+                        <p>After solving the equation through homogenous and particular solution, the following equation is obtained for steady&mdash;state concentration of mCP generated after PyeaR is triggered:</p>
+                        $$[\textrm{mCP}]=\frac{K}{\gamma_m} - \frac{K}{\gamma_m}e^{-\gamma_mt}$$
+                        <p>The steady&mdash;state concentration of mCP is then substituted into Eq. (\ref{12}) and is also solved through homogenous and particular solution. The resulting equation gives the steady&mdash;state concentration of CP in the desired system according to the specified formation and degradation rates of CP in response to promotor stimulation:</p>
+                        $$[\textrm{CP}]=\frac{K k_{translation}}{\gamma_p \gamma_m} + \frac{K k_{translation}}{{\gamma_m}^2-\gamma_p \gamma_m} e^{-\gamma_mt} - \left(\frac{K k_{translation}}{\gamma_p \gamma_m} + \frac{K k_{translation}}{{\gamma_m}^2-\gamma_p \gamma_m} \right)e^{-\gamma_pt} $$
+                        <br><br>
+
+                        <h2>Simulation of the NOx-sensing system</h2>
+                        <h3>Simulation parameters</h3>
+                        <table class="table-minimal">
+                            <caption><b>Table 2:</b> Parameters, their description, and their values used in MATLAB simulation of the NOx-sensing system.</caption>
+                            <thead>
+                                <tr>
+                                    <th>Parameter </th>
+                                    <th>Description</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>$[\textrm{PyeaR}]$</td>
+                                    <td>Concentration of PyeaR</td>
+                                    <td>1 nM</td>
+                                </tr>
+                                <tr>
+                                    <td>$k_{transcription}$</td>
+                                    <td>Rate of chromoprotein mRNA synthesis</td>
+                                    <td>0.167$\textrm{min}^{-1}$</td>
+                                </tr>
+                                <tr>
+                                    <td>$k_{translation}$</td>
+                                    <td>Rate of chromoprotein synthesis</td>
+                                    <td>$0.0011 \textrm{min}^{-1}$</td>
+                                </tr>
+                                <tr>
+                                    <td>$\gamma_m$</td>
+                                    <td>mRNA degradation rate</td>
+                                    <td>$0.19 \textrm{min}^{-1}$</td>
+                                </tr>
+                                <tr>
+                                    <td>$\gamma_p$</td>
+                                    <td>Chromoprotein degradation rate</td>
+                                    <td>$0.18 \textrm{min}^{-1}$</td>
+                                </tr>
+                                <tr>
+                                    <td>$K_{\textrm{NO}}$</td>
+                                    <td>Dissociation constant of NO</td>
+                                    <td>$0.12 \textrm{min}^{-1}$</td>
+                                </tr>
+                                <tr>
+                                    <td>$K_{\textrm{d(NsrR)}}$</td>
+                                    <td>Dissociation constant of NsrR</td>
+                                    <td>$\textrm{35}$ nM</td>
+                                </tr>
+                                <tr>
+                                    <td>n</td>
+                                    <td>Cooperativity of NO binding to NsrR</td>
+                                    <td>2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <h3>Simulation results</h3>
+                        <br><br>
+
+                        <figure>
+                            <!--@import _lineChart_mCP.html-->
+                            <figcaption>
+                                <b>Figure 4.</b> The graph shows the steady&ndash;state concentration/expression of mCP over time with respect to the mRNA degradation rates of chromoprotein. It is clear from the graph that presence of 0.87 nM of mCP is important in the cell in order to achieve the steady&ndash;state concentration of mCP. 
+                            </figcaption>
+                        </figure>
+
+                        <br><br>
+                        <figure>
+                        <!--@import _lineChart_CP.html-->
+                            <figcaption>
+                                <b>Figure 5.</b> The graph shows the relationship between the steady&ndash;state concentration over time of CP with respect to its degradation rate. It can be seen from the graph that 0.005 nM of CP is required in the cell in order to acquire the steady&ndash;state concentration of CP.
+                            </figcaption>
+                        </figure>
+                        <h3>Matlab Code</h3>
+<pre>
+    <code class="language-matlab">
+%Defining the parameters
+ktr     = 0.167;     %mRNA synthesis rate of 
+                     %Chromoprotein per minute (rate of transcription)
+ktrans  = 0.0011;    %Chromoprotein synthesis rate 
+                     %per minute (rate of translation)
+ycp     = 0.18;      %Chromoproteins degradation rate per minute
+ym      = 0.19;      %mRNA degradation rate of chromoproteins per minute 
+Kno     = 0.12;      %Dissociation constant for inducer (NO)
+Kdn     = 35;        %Dissociation constant for repressor (NsrR)
+pyear   = 1;         %Number of plasmids per cell
+n       = 2;         %Cooperativity of inducer (NO)
+
+%Assume that the repressor is removed 
+NsrR    = 0;
+NO      = 2;
+t       = 0:0.1:240; 
+
+%Calculate mRNA and Chromoprotein values
+K       = ktr*pyear/(1+(NsrR/((1+(NO/Kno)^n)*Kdn)));
+mCP     = K/ym-K/ym*exp(-ym*t);
+CP      = K*ktrans/(ycp*ym)+K*ktrans/(ym^2-ycp*ym)*exp(-ym*t)...
+    -(K*ktrans/(ycp*ym)+K*ktrans/(ym^2-ycp*ym))*exp(-ycp*t);
+
+disp('Steady State mCP Concentration:')
+disp(mCP(end)) %Steady state mRNA value
+disp('Steady State CP Concentration:')
+disp(CP(end)) %Steady state chromoprotein value
+ 
+%Plotting mRNA concentration over time
+figure(1)
+plot(t, mCP,'r','LineWidth',2)
+hold on
+grid on
+xlabel('Time (minutes)')
+ylabel('mCP per cell (nM)')
+title('Expression of mRNA of chromoprotein (mCP)')
+
+%Plotting the chromoprotein concentrations over time
+figure(2)
+plot(t,CP,'r', 'LineWidth',2)
+grid on
+hold on
+xlabel('Time (minutes)')
+ylabel('CP per cell (nM)')
+title('Expression of chromoprotein (CP)')
+
+%Save this as nox_sensing_system_simulation.m file
+    </code>
+</pre>
+                        <h3>Conclusion</h3>
+                        <p>The system is considered as stable, because when NsrR detaches itself from pYeaR, the promoter then initiate the production of mCP and CP, until a steady&ndash;state concentration is reached. This steady&ndash;state concentration is the maximum production rate of mCP and CP with respect to their degradation rates. However, it is clear from the graphs that the degradation rates are only related to the maximum production rate/ number of molecules in the cell; it is not responsible for altering the time span required to reach the steady&ndash;state concentration. Furthermore, this simplified solution for NOx&ndash;sensing system demonstrates the migration of system towards steady&ndash;state under assumed parameters and prescribed conditions. Therefore, this mathematical model can be considered as an appropriate model for determining the behavior of NOx&ndash;sensing system. </p>
+                        
+                        <h2>References</h2>
+                        <ol>
+                        <li><p>Li, J., Zhao, Z., Kazakov, A., Chaos, M., Dryer, F.L. and Scire, J.J. (2007) 'A comprehensive kinetic mechanism for CO, CH2O, and CH3OH combustion', International Journal of Chemical Kinetics, 39(3), pp. 109&ndash;136. doi: 10.1002/kin.20218.</p></li>
+                        <li><p>Chen, H., Shiroguchi, K., Ge, H. and Xie, X.S. (2015) 'Genome-wide study of mRNA degradation and transcript elongation in Escherichia coli', Molecular Systems Biology, 11(1), pp. 781&ndash;781. doi: 10.15252/msb.20145794.</p></li>
+                        <li><p>Leduc, J., Thorsteinsson, M.V., Gaal, T. and Roberts, G.P. (2001) 'Mapping CooA.RNA polymerase interactions: Identification of activating regions 2 and 3 in CooA, the co&ndash;sensing transcriptional activator', Journal of Biological Chemistry, 276(43), pp. 39968&ndash;39973. doi: 10.1074/jbc.m105758200.</p></li>
+                        <li><p>Benabbas, A., Karunakaran, V., Youn, H., Poulos, T.L. and Champion, P.M. (2012) 'Effect of DNA binding on Geminate CO recombination Kinetics in CO-sensing transcription factor CooA', Journal of Biological Chemistry, 287(26), pp. 21729&ndash;21740. doi: 10.1074/jbc.m112.345090.</p></li>
+                        <li><p>Kuchinskas, M., Li, H., Conrad, M., Roberts, G. and Poulos, T.L. (2006) 'The role of the DNA-Binding domains in CooA activation', Biochemistry, 45(23), pp. 7148&ndash;27153. doi: 10.1021/bi052609o.</p></li>
+                        <li><p>Bergmann, John E, and Harvey F Lodish. 'A kinetic model of protein synthesis. Application to hemoglobin synthesis and translational control.' The Journal of biological chemistry 254.23 (1979) : 11927&ndash;37.</p></li>
+                        <li><p>Nick Csicsery, and Ricky O'Laughlin. 'A Mathematical Model of a Synthetically Constructed Genetic Toggle Switch' (2015) </p></li>
+                        </ol>
+
+
+                    </div>
+                    <!--End of centered-content-wrapper-->
+                </div>
+                <!--End of centered-content-wrapper-container-->
+                
+                <!--@import "_all_in_one_footer.kit"-->
+            </section>
+            <!--End of inner-container-->
+        </div>
+        <!--End of on-canvas container for all the content-->
+    </div>
+    <!--End of outermost box-->
+    <script src="js/script-min.js" type="text/javascript"></script>
+    <!--@import "_statcounter.kit"-->
+
+</body>
+
+</html>

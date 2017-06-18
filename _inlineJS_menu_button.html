@@ -1,0 +1,30 @@
+<script type="text/javascript">
+    var button = document.getElementById('menu-button');
+    button.style.position = "fixed";
+    button.style.zIndex = "-1";
+    var buttonImage = document.getElementById("menu-background");
+
+    //Wait for the Logo to load and fill he div
+    document.getElementById('id-logo').onload = function() {
+        var header = document.getElementById('header-oc');
+        headerHeight = header.scrollHeight;
+        screenWidth = header.scrollWidth;
+        console.log('headerHeight',headerHeight, 'headerwidth', screenWidth);
+
+        //Scale the button according to header height
+        var buttonheight = headerHeight / 3.5;
+        buttonImage.style.backgroundSize = buttonheight + 'px';
+        buttonImage.style.height = buttonheight +'px';
+        buttonImage.style.width = buttonheight*1.25 +'px';
+        button.style.zIndex = "2";
+
+        // Calculate button coordinates
+        menuButtonHeight = 80;                        
+        var buttonTopPosition = headerHeight / 2 - buttonheight / 2;
+        var buttonLeftPosition = screenWidth / 36 ;
+
+        // Poistion the button at optimal location
+        button.style.left = buttonLeftPosition + 'px';
+        button.style.top = buttonTopPosition + 'px';
+    }
+</script>

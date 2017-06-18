@@ -1,0 +1,391 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the Team page.
+// -----------------------------------------------------------------------------
+.team-container {
+    @include outer-container(100%);
+    @include pad();
+    .team-wrapper {
+        // @include span-columns(12);
+        // background-color: green;
+        .picture,
+        .picture-advisor {
+            @include span-columns(3);
+            //background-color: red;
+            text-align: center;
+        }
+        .bio {
+            @include span-columns(9);
+            //background-color: blue;
+
+            h4 {
+                margin-bottom: 0px;
+                margin-top: 0px;
+                color: rgba(255, 255, 255, 1);
+
+            }
+            h3 {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                color: white;
+            }
+            p:last-child {
+                margin-bottom: 0;
+            }
+
+            p {
+                color: rgba(255, 255, 255, 0.8);
+                margin-top: 25px;
+            }
+        }
+        // .bio:hover p {
+        //     color: rgba(255, 255, 255, 0.9);
+        // }
+    }
+}
+
+
+.ali {
+    background-color: #000000;
+}
+
+.asif {
+    background-color: #291d33;
+}
+
+.hadi {
+    background-color: #062140;
+}
+
+.ismail {
+    background-color: #024667;
+}
+
+.maleeha {
+    background-color: #18121E;
+}
+
+.mansoor {
+    background-color: #155765;
+}
+
+.masoom {
+    background-color: hsla(191, 78%, 9%, 0.93);
+}
+
+.rabia {
+    background-color: #1B0529;
+}
+
+.rayyan {
+    background-color: #00303F;
+}
+
+.sami {
+    background-color: #34223b;
+}
+
+.sarah {
+    background-color: #192231;
+}
+
+.sidra {
+    background-color: #083C5D;
+}
+
+.faisal {
+    background-color: #000000;
+}
+
+.adil {
+    background-color: #252839;
+}
+
+.adnan {
+    background-color: #4D505B; //#062140;
+}
+
+.ali:hover {
+    img {
+        content: url("http://2016.igem.org/wiki/images/8/8f/T--Peshawar--ali-2.jpg");
+    }
+}
+
+.asif:hover {
+    img {
+        content: url("http://2016.igem.org/wiki/images/a/a2/T--Peshawar--asif-2.jpg");
+    }
+}
+
+.hadi:hover {
+    img {
+        content: url("http://2016.igem.org/wiki/images/8/83/T--Peshawar--hadi-2.jpg");
+    }
+}
+
+.ismail:hover {
+    img {
+        content: url("http://2016.igem.org/wiki/images/b/ba/T--Peshawar--ismail-2.jpg");
+    }
+}
+
+.maleeha:hover {
+    img {
+        content: url("http://2016.igem.org/wiki/images/e/e8/T--Peshawar--maleeha-2.jpg");
+    }
+}
+
+.mansoor:hover {
+    img {
+        content: url("http://2016.igem.org/wiki/images/3/3d/T--Peshawar--mansoor-2.jpg");
+    }
+}
+
+.masoom:hover {
+    img {
+        content: url("http://2016.igem.org/wiki/images/e/e9/T--Peshawar--masoom-2.jpg");
+    }
+}
+
+.rabia:hover {
+    img {
+        content: url("http://2016.igem.org/wiki/images/e/ea/T--Peshawar--rabia-2.jpg");
+    }
+}
+
+.rayyan:hover {
+    img {
+        content: url("http://2016.igem.org/wiki/images/7/7e/T--Peshawar--rayan-2.jpg");
+    }
+}
+
+.sami:hover {
+    img {
+        content: url("http://2016.igem.org/wiki/images/0/09/T--Peshawar--sami-2.jpg");
+    }
+}
+
+.sarah:hover {
+    img {
+        content: url("http://2016.igem.org/wiki/images/b/b8/T--Peshawar--sarah-2.jpg");
+    }
+}
+
+.sidra:hover {
+    img {
+        content: url("http://2016.igem.org/wiki/images/1/17/T--Peshawar--sidra-2.jpg");
+    }
+}
+
+.picture {
+    img:hover {
+        -webkit-animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+        animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-perspective: 1000px;
+        perspective: 1000px;
+    }
+}
+
+@-webkit-keyframes shake {
+    10%,
+    90% {
+        -webkit-transform: translate3d(-1px, 0, 0);
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%,
+    80% {
+        -webkit-transform: translate3d(2px, 0, 0);
+        transform: translate3d(2px, 0, 0);
+    }
+    30%,
+    50%,
+    70% {
+        -webkit-transform: translate3d(-4px, 0, 0);
+        transform: translate3d(-4px, 0, 0);
+    }
+    40%,
+    60% {
+        -webkit-transform: translate3d(4px, 0, 0);
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+@keyframes shake {
+    10%,
+    90% {
+        -webkit-transform: translate3d(-1px, 0, 0);
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%,
+    80% {
+        -webkit-transform: translate3d(2px, 0, 0);
+        transform: translate3d(2px, 0, 0);
+    }
+    30%,
+    50%,
+    70% {
+        -webkit-transform: translate3d(-4px, 0, 0);
+        transform: translate3d(-4px, 0, 0);
+    }
+    40%,
+    60% {
+        -webkit-transform: translate3d(4px, 0, 0);
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+@include media($mobile) {
+    .team-container {
+        @include outer-container(100%);
+        @include pad();
+        .team-wrapper {
+            // @include span-columns(12);
+            // background-color: green;
+            .picture,
+            .picture-advisor {
+                @include span-columns(12);
+                //background-color: red;
+                text-align: center;
+            }
+            .bio {
+                @include span-columns(12);
+                //background-color: blue;
+                h4,
+                h3 {
+                    margin-top: 0;
+                    margin-bottom: 10px;
+                    text-align: center;
+                }
+                p:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+// SOCIAL ICONS
+.social-team-footer {
+    height: 30px;
+    width: 30px;
+    margin: $social-off-canvas-intericon-gap; //distance between social icons
+    //remove surrounding circles
+    #facebook-circle,
+    #twitter-circle,
+    #instagram-circle,
+    #web-circle,
+    #wordpress-circle,
+    #email-circle,
+    #linkedin-circle {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    // adjust the fill color
+    #facebook,
+    #twitter,
+    #instagram,
+    #Shape,
+    #wordpress,
+    #envelope,
+    #linkedin,
+    {
+        fill: white;
+    }
+}
+
+// hover color
+a svg:hover #facebook {
+    fill: #3b5998;
+}
+
+a svg:hover #twitter {
+    fill: #1da1f2;
+}
+
+a svg:hover #instagram {
+    fill: #c13584;
+}
+
+a svg:hover #Shape {
+    fill: #365ebf;
+}
+
+a svg:hover #wordpress {
+    fill: #d54e21;
+}
+
+a svg:hover #envelope {
+    fill: #C73524;
+}
+
+a svg:hover #linkedin {
+    fill: #0077b5;
+}
+
+
+/* Hover transitions */
+
+a svg #facebook,
+a svg #twitter,
+a svg #instagram,
+a svg #Shape,
+a svg #wordpress,
+a svg #envelope,
+a svg #linkedin {
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: 200ms;
+    -webkit-transition-timing-function: ease-in-out;
+}
+
+// Instructors and PIs
+.adnan,
+.faisal,
+.adil {
+    .picture-advisor {
+        img {
+            //height: 200px;
+            width: 200px;
+        }
+    }
+}
+
+
+//PARALLEX CODE
+// Based on http://codepen.io/skeurentjes/
+.team-full {
+    $parallax-window-height: 30em;
+    $parallax-background-height: $parallax-window-height * 1;
+    .parallax-window {
+        max-height: $parallax-window-height;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        width: 100%;
+    }
+    .parallax-static-content {
+        color: #9A9A8A;
+        padding: 8em 0;
+        position: relative;
+        z-index: 9;
+    }
+    .parallax-background {
+        background: url("http://2016.igem.org/wiki/images/d/d1/T--Peshawar--iGemers-tint-compressed.png") repeat;
+        background-position: top;
+        background-size: cover;
+        background-color: beige;
+        height: $parallax-background-height;
+        left: 0;
+        position: absolute;
+        top: - $parallax-window-height / 3;
+        width: 100%;
+    }
+    h1{
+            text-shadow: 2px 2px grey;
+            font-size: 70px;
+
+    }
+}

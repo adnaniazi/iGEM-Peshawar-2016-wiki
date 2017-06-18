@@ -1,0 +1,33 @@
+    <!--Do you believe synthetically modifying organisms can incur sin upon a person?(198 responses)-->
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['#', '#'],
+          ['Yes',     41],
+          ['No',      89],
+          ["It's complicated",  90],
+        ]);
+
+        var options = {
+          title: 'Do you believe synthetically modifying organisms can incur sin upon a person?',
+          pieHole: 0.4,
+          slices: {
+            0: { color: '#2659E5' },
+            1: { color: '#57D09E' },
+            2: { color: '#FDBA23' },
+            3: { color: '#E53762' },
+            4: { color: '#242D3D' },
+          },
+          titleTextStyle: {fontSize: 19},
+          legend: {textStyle: {fontSize: 18}}
+
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart6'));
+        chart.draw(data, options);
+      }
+    </script>
+
+    <div id="donutchart6" style="width: 900px; height: 500px;"></div>

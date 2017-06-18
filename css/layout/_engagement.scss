@@ -1,0 +1,143 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the Engagement page.
+// -----------------------------------------------------------------------------
+.engagement {
+    img {
+        display: block;
+        margin: 0 auto;
+        -webkit-filter: drop-shadow(5px 5px 5px #222);
+        filter: drop-shadow(5px 5px 5px #222);
+        padding-bottom: 20px;
+    }
+    li {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+.media {
+    img {
+        display: block;
+        margin: 0 auto;
+        padding-bottom: 35px;
+    }
+    h2 {
+        text-align: center;
+        color: grey;
+    }
+}
+
+.engagement {
+    h2 {
+        text-align: center;
+        color: grey;
+    }
+    h3 {
+        color: grey;
+    }
+}
+
+.engagement-full {
+    $parallax-window-height: 30em;
+    $parallax-background-height: $parallax-window-height * 1;
+    .parallax-window {
+        max-height: $parallax-window-height;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        width: 100%;
+    }
+    .parallax-static-content {
+        color: #9A9A8A;
+        padding: 8em 0;
+        position: relative;
+        z-index: 9;
+    }
+    .parallax-background {
+        background: url("http://2016.igem.org/wiki/images/b/b4/T--Peshawar--public-engagment-collage-min.png") repeat;
+        background-position: top;
+        background-size: cover;
+        background-color: beige;
+        height: $parallax-background-height;
+        left: 0;
+        position: absolute;
+        top: - $parallax-window-height / 3;
+        width: 100%;
+    }
+    h1 {
+        text-shadow: 2px 2px grey;
+        font-size: 70px;
+    }
+}
+
+
+#Event, #Date, #Audience, #Duration, #Activity{
+	//padding-top: 10px;
+	//padding-bottom: 10px;
+	line-height: 1.5em;
+
+}
+
+
+
+.event-map-container {
+    @include outer-container(100%);
+    @include pad();
+    .event-map-wrapper {
+        //@include span-columns(12);
+        //background-color: #196E97;
+        .event-details {
+            @include span-columns(4);
+            //background-color: #559771;
+        }
+        .map {
+            @include span-columns(8);
+        }
+        padding-bottom: 0;
+    }
+    padding-bottom: 0;
+}
+
+
+#social-media{
+	width: 558px;
+}
+
+.map-caption-container{
+	padding-top: 0;
+	padding-bottom: 60px;
+}
+
+
+#italic-span{
+	font-family: "pt_sans_italic","Big Caslon","Tahoma","Verdana","sans-serif";
+	color: #3A8191;
+}
+
+
+.card-game{
+    ul {
+        list-style-type: square;
+        line-height: 1.6em;
+        padding-left: 2em;
+                li:last-child{
+          padding-bottom: 20px;
+        }
+    }
+    ol {
+        line-height: 1.6em;
+        padding-left: 2em;
+        li {
+            list-style-type: decimal;
+        }
+        li:last-child{
+          padding-bottom: 20px;
+        }
+    }
+
+}
+
+#diy-dna-extraction{
+	margin-top: 0;
+}
+                    

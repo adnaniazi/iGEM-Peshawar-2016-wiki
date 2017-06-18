@@ -1,0 +1,54 @@
+@charset 'UTF-8';
+
+/*
+// 1. Configuration and helpers
+@import
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/mixins';
+*/
+
+// 2. Vendors
+@import
+  'vendor/normalize',
+  'vendor/reset_iGEM',
+  'vendor/bourbon/bourbon',
+  'vendor/base/base',  
+  'vendor/neat/neat',
+  'vendor/slidebars',
+  'vendor/prism';
+/*
+// 3. Base stuff
+@import
+  'base/base',
+  'base/fonts',
+  'base/typography',
+  'base/helpers';
+*/
+
+// 4. Layout-related sections
+@import
+  'layout/main-layout',
+  'layout/home',
+  'layout/team',
+  'layout/attributions',
+  'layout/notebook',
+  'layout/model',
+  'layout/safety',
+  'layout/wiki',
+  'layout/description',
+  'layout/silver',
+  'layout/collaborations',
+  'layout/engagement',
+  'layout/awards',
+  'layout/integrated_practices';
+
+
+// 5. Components
+@import
+  'components/button';
+
+// 6. Page-specific styles
+@import
+  'pages/home';
+

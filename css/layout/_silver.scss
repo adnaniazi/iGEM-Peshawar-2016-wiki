@@ -1,0 +1,43 @@
+//Human Practices Silver page
+.silver-container {
+    @include outer-container(100%);
+    @include pad();
+    h2{
+    	color: white;
+    	text-align: center;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .silver-wrapper {}
+}
+
+.demographics {
+    background-color: #094743;
+}
+
+.comfortable_instituionlized{
+	background-color: #6D4269;
+}
+
+.bateria_beneficial{
+	background-color: #FBAF00;
+}
+
+.understand_dna_rna_how_well{
+	background-color: #e53762;
+}
+
+.synthetic_sin{
+	background-color: #183AE9;
+}
+.sidestepping_dialog{
+	background-color: #C9002D;
+}
+
+.own_a_motorized_vehicle{
+	background-color: #4CC987;
+}
+
+.ip_conflict{
+	background-color: #134554;
+}

@@ -1,0 +1,65 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the Home page.
+// -----------------------------------------------------------------------------
+
+body {
+  //margin: 0;
+  background: #000;
+  background-size: cover;
+}
+
+
+.home-full {
+    $parallax-window-height: 30em;
+    $parallax-background-height: $parallax-window-height * 0.9;
+    .parallax-window {
+        max-height: $parallax-window-height;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        width: 100%;
+    }
+    .parallax-static-content {
+        color: #9A9A8A;
+        padding: 8em 0;
+        position: relative;
+        z-index: 9;
+    }
+    .parallax-background {
+        background: url("http://2016.igem.org/wiki/images/6/6e/T--Peshawar--inspector-nocoli.png") repeat;
+        background-position: top;
+        background-size: cover;
+        background-color: beige;
+        height: $parallax-background-height;
+        left: 0;
+        position: absolute;
+        top: - $parallax-window-height / 3;
+        width: 100%;
+    }
+    h2 {
+        //text-shadow: 2px 2px grey;
+        color: white;
+        font-size: 40px;
+        margin-bottom: 0px;
+        margin-top: 5px;
+        text-align: left;
+        padding-left: 3em;
+        line-height: 1.4em;
+    }
+
+}
+
+
+
+    #inspector{
+    	color: #1F944E;
+    }
+    #NO{
+    	color: #E4C725;
+    }
+    #CO{
+    	color: #F9454D;
+    }
+    #li{
+    	color: #89D31C;
+    }
