@@ -1,5 +1,5 @@
-iGEM-Peshawar-2016-wiki
-=======================
+Code for iGEM Peshawar 2016 Wiki 
+=================================
 
 Contains all the code for 2016 iGEM Wiki of Team Peshawar. Team Peshawar 2016
 was the first ever iGEM team from Pakistan and won a bronze medal in the Jiant
